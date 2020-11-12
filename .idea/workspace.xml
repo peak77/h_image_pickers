@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7080ff30-f4dc-4f89-a7df-5629d579afab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="20200812_iosNoCrop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1icY4FiACRA5Vv3GHM762GLTUt7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\flutter_package\image_pickers\example\image" />
+      <recent name="F:\flutter_package\image_pickers\example" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\flutter_package\image_pickers\example\image" />
+      <recent name="F:\flutter_package\image_pickers\example\image\3.0x" />
+      <recent name="F:\flutter_package\image_pickers\example\image\2.0x" />
+      <recent name="F:\flutter_package\image_pickers" />
+      <recent name="F:\flutter_package\image_pickers\images\3.0x" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7080ff30-f4dc-4f89-a7df-5629d579afab" name="Default Changelist" comment="" />
+      <created>1571893796328</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571893796328</updated>
+      <workItem from="1603763376375" duration="1374000" />
+      <workItem from="1603765944339" duration="495000" />
+      <workItem from="1603767281383" duration="1939000" />
+      <workItem from="1603788480736" duration="3797000" />
+      <workItem from="1603793456574" duration="19000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1571893983191</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571893983191</updated>
+    </task>
+    <task id="LOCAL-00002" summary="android 测试完成">
+      <created>1571898447699</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571898447699</updated>
+    </task>
+    <task id="LOCAL-00003" summary="测试完成">
+      <created>1571901873628</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571901873628</updated>
+    </task>
+    <task id="LOCAL-00004" summary="视频保存">
+      <created>1572242941792</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572242941794</updated>
+    </task>
+    <task id="LOCAL-00005" summary="视频保存">
+      <created>1572245005248</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572245005248</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修复安卓9无法加载图片问题">
+      <created>1573532848936</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573532848936</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ui颜色">
+      <created>1573794330676</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1573794330677</updated>
+    </task>
+    <task id="LOCAL-00008" summary="拍照，录制视频">
+      <created>1573809374145</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1573809374145</updated>
+    </task>
+    <task id="LOCAL-00009" summary="拍照，录制视频">
+      <created>1573809502015</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1573809502015</updated>
+    </task>
+    <task id="LOCAL-00010" summary="拍照，录制视频">
+      <created>1574054834320</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574054834321</updated>
+    </task>
+    <task id="LOCAL-00011" summary="拍照，录制视频">
+      <created>1574057571847</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574057571847</updated>
+    </task>
+    <task id="LOCAL-00012" summary="拍照，录制视频">
+      <created>1574058466646</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1574058466646</updated>
+    </task>
+    <task id="LOCAL-00013" summary="拍照，录制视频">
+      <created>1574066055133</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574066055133</updated>
+    </task>
+    <task id="LOCAL-00014" summary="glide无法找到问题">
+      <created>1574499205903</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1574499205903</updated>
+    </task>
+    <task id="LOCAL-00015" summary="glide无法找到问题">
+      <created>1574499783845</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1574499783845</updated>
+    </task>
+    <task id="LOCAL-00016" summary="通过flutter端设置颜色，来改变原生图片选择页面颜色">
+      <created>1574747650966</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1574747650967</updated>
+    </task>
+    <task id="LOCAL-00017" summary="多图预览">
+      <created>1574754059081</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574754059082</updated>
+    </task>
+    <task id="LOCAL-00018" summary="多图预览">
+      <created>1574840416410</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1574840416410</updated>
+    </task>
+    <task id="LOCAL-00019" summary="多图预览">
+      <created>1574908984127</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1574908984127</updated>
+    </task>
+    <task id="LOCAL-00020" summary="优化多图预览时内存问题">
+      <created>1575448153705</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1575448153705</updated>
+    </task>
+    <task id="LOCAL-00021" summary="优化多图预览时内存问题">
+      <created>1576129259386</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1576129259386</updated>
+    </task>
+    <task id="LOCAL-00022" summary="修改corp 为 crop">
+      <created>1576216575693</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1576216575693</updated>
+    </task>
+    <task id="LOCAL-00023" summary="保存图片字节数据">
+      <created>1576221611124</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1576221611125</updated>
+    </task>
+    <task id="LOCAL-00024" summary="保存图片字节数据">
+      <created>1576222138469</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1576222138469</updated>
+    </task>
+    <task id="LOCAL-00025" summary="保存图片字节数据">
+      <created>1576228589580</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1576228589580</updated>
+    </task>
+    <task id="LOCAL-00026" summary="保存图片字节数据">
+      <created>1576490397916</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1576490397916</updated>
+    </task>
+    <task id="LOCAL-00027" summary="安卓Qgif裁剪后变成静态图问题">
+      <created>1577077762054</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1577077762054</updated>
+    </task>
+    <task id="LOCAL-00028" summary="适配安卓Q文件存储，修复小米手机崩溃问题">
+      <created>1589337596021</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1589337596021</updated>
+    </task>
+    <task id="LOCAL-00029" summary="修复 iOS 因为图片（right_arrow.png、left_arrow.png、error.png）导致的各种问题">
+      <created>1591086225182</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1591086225182</updated>
+    </task>
+    <task id="LOCAL-00030" summary="修复 因使用bitmap获取后缀名造成的崩溃">
+      <created>1591867369201</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1591867369201</updated>
+    </task>
+    <task id="LOCAL-00031" summary="修复 因使用bitmap获取后缀名造成的崩溃">
+      <created>1602233458938</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1602233458938</updated>
+    </task>
+    <task id="LOCAL-00032" summary="修复  拍照无后缀 拍照裁剪设置为false失效">
+      <created>1602473911782</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1602473911782</updated>
+    </task>
+    <task id="LOCAL-00033" summary="修复  拍照无后缀 拍照裁剪设置为false失效">
+      <created>1602473919925</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1602473919925</updated>
+    </task>
+    <task id="LOCAL-00034" summary="修复  拍照无后缀 拍照裁剪设置为false失效">
+      <created>1602487441367</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1602487441368</updated>
+    </task>
+    <task id="LOCAL-00035" summary="修复  拍照无后缀 拍照裁剪设置为false失效">
+      <created>1602490619204</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1602490619204</updated>
+    </task>
+    <task id="LOCAL-00036" summary="修复  拍照无后缀 拍照裁剪设置为false失效">
+      <created>1602490625652</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1602490625652</updated>
+    </task>
+    <task id="LOCAL-00037" summary="更新AFNetworking 到4.0 删除UIWebview">
+      <created>1602651911265</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1602651911266</updated>
+    </task>
+    <task id="LOCAL-00038" summary="更新AFNetworking 到4.0 删除UIWebview">
+      <created>1603263468310</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1603263468310</updated>
+    </task>
+    <task id="LOCAL-00039" summary="更新AFNetworking 到4.0 删除UIWebview">
+      <created>1603265751008</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1603265751008</updated>
+    </task>
+    <task id="LOCAL-00040" summary="修改provider">
+      <created>1603763710047</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1603763710047</updated>
+    </task>
+    <task id="LOCAL-00041" summary="修改provider">
+      <created>1603766067008</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1603766067008</updated>
+    </task>
+    <task id="LOCAL-00042" summary="修改provider">
+      <created>1603767307189</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1603767307189</updated>
+    </task>
+    <task id="LOCAL-00043" summary="修改provider">
+      <created>1603767555999</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1603767555999</updated>
+    </task>
+    <task id="LOCAL-00044" summary="修改provider">
+      <created>1603768191006</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1603768191007</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/cuixiaocun/Desktop/image_pickers_swift/ios" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/example/ios/.symlinks/plugins/image_pickers" />
+    </ignored-roots>
+    <MESSAGE value="init" />
+    <MESSAGE value="android 测试完成" />
+    <MESSAGE value="测试完成" />
+    <MESSAGE value="视频保存" />
+    <MESSAGE value="修复安卓9无法加载图片问题" />
+    <MESSAGE value="ui颜色" />
+    <MESSAGE value="拍照，录制视频" />
+    <MESSAGE value="glide无法找到问题" />
+    <MESSAGE value="通过flutter端设置颜色，来改变原生图片选择页面颜色" />
+    <MESSAGE value="多图预览" />
+    <MESSAGE value="优化多图预览时内存问题" />
+    <MESSAGE value="修改corp 为 crop" />
+    <MESSAGE value="保存图片字节数据" />
+    <MESSAGE value="安卓Qgif裁剪后变成静态图问题" />
+    <MESSAGE value="适配安卓Q文件存储，修复小米手机崩溃问题" />
+    <MESSAGE value="修复 iOS 因为图片（right_arrow.png、left_arrow.png、error.png）导致的各种问题" />
+    <MESSAGE value="修复 因使用bitmap获取后缀名造成的崩溃" />
+    <MESSAGE value="修复  拍照无后缀 拍照裁剪设置为false失效" />
+    <MESSAGE value="更新AFNetworking 到4.0 删除UIWebview" />
+    <MESSAGE value="修改provider" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改provider" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="521" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603443086608">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state x="521" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.977@0.23.1920.977" timestamp="1602206714626" />
+    <state x="521" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.980@0.23.1920.980" timestamp="1603443086608" />
+    <state x="794" y="244" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1602206700953">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state x="794" y="244" key="#com.intellij.ide.util.TreeFileChooserDialog/0.23.1920.977@0.23.1920.977" timestamp="1602206700953" />
+    <state x="715" y="373" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1603443844127">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state x="715" y="373" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.980@0.23.1920.980" timestamp="1603443844127" />
+    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1603768190653">
+      <screen x="0" y="23" width="2560" height="1344" />
+    </state>
+    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603768190653" />
+    <state x="484" y="24" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1602487440864" />
+    <state x="484" y="24" key="CommitChangelistDialog2/0.23.1920.978@0.23.1920.978" timestamp="1602490625312" />
+    <state x="439" y="26" key="CommitChangelistDialog2/0.23.1920.980@0.23.1920.980" timestamp="1603443302708" />
+    <state x="954" y="23" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1602651910863" />
+    <state x="954" y="23" key="CommitChangelistDialog2/0.23.1920.984@0.23.1920.984" timestamp="1603270118375" />
+    <state x="954" y="23" key="CommitChangelistDialog2/0.23.1920.986@0.23.1920.986" timestamp="1603263467804" />
+    <state x="137" y="150" width="1536" height="784" key="DiffContextDialog" timestamp="1603443943690">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state x="137" y="150" width="1536" height="784" key="DiffContextDialog/0.23.1920.980@0.23.1920.980" timestamp="1603443943690" />
+    <state width="1878" height="234" key="GridCell.Tab.0.bottom" timestamp="1603445418205">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="1824" height="108" key="GridCell.Tab.0.bottom/0.23.1920.978@0.23.1920.978" timestamp="1602490893368" />
+    <state width="1878" height="234" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1603445418205" />
+    <state width="912" height="525" key="GridCell.Tab.0.bottom/0.23.1920.984@0.23.1920.984" timestamp="1603265863015" />
+    <state width="912" height="244" key="GridCell.Tab.0.bottom/0.23.1920.986@0.23.1920.986" timestamp="1603263493526" />
+    <state width="1878" height="234" key="GridCell.Tab.0.center" timestamp="1603445418204">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="1824" height="108" key="GridCell.Tab.0.center/0.23.1920.978@0.23.1920.978" timestamp="1602490893368" />
+    <state width="1878" height="234" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1603445418204" />
+    <state width="912" height="525" key="GridCell.Tab.0.center/0.23.1920.984@0.23.1920.984" timestamp="1603265863014" />
+    <state width="912" height="244" key="GridCell.Tab.0.center/0.23.1920.986@0.23.1920.986" timestamp="1603263493523" />
+    <state width="1878" height="234" key="GridCell.Tab.0.left" timestamp="1603445418204">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="1824" height="108" key="GridCell.Tab.0.left/0.23.1920.978@0.23.1920.978" timestamp="1602490893367" />
+    <state width="1878" height="234" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1603445418204" />
+    <state width="912" height="525" key="GridCell.Tab.0.left/0.23.1920.984@0.23.1920.984" timestamp="1603265863013" />
+    <state width="912" height="244" key="GridCell.Tab.0.left/0.23.1920.986@0.23.1920.986" timestamp="1603263493523" />
+    <state width="1878" height="234" key="GridCell.Tab.0.right" timestamp="1603445418204">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="1824" height="108" key="GridCell.Tab.0.right/0.23.1920.978@0.23.1920.978" timestamp="1602490893368" />
+    <state width="1878" height="234" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1603445418204" />
+    <state width="912" height="525" key="GridCell.Tab.0.right/0.23.1920.984@0.23.1920.984" timestamp="1603265863014" />
+    <state width="912" height="244" key="GridCell.Tab.0.right/0.23.1920.986@0.23.1920.986" timestamp="1603263493524" />
+    <state x="990" y="452" key="IDE.errors.dialog" timestamp="1603792817051">
+      <screen x="0" y="23" width="2560" height="1344" />
+    </state>
+    <state x="990" y="452" key="IDE.errors.dialog/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603792817051" />
+    <state x="263" y="87" key="MergeDialog" timestamp="1603263358682">
+      <screen x="0" y="23" width="1920" height="986" />
+    </state>
+    <state x="384" y="113" key="MergeDialog/0.23.1920.982@0.23.1920.982" timestamp="1602648739492" />
+    <state x="263" y="87" key="MergeDialog/0.23.1920.986@0.23.1920.986" timestamp="1603263358682" />
+    <state x="928" y="231" key="MultipleFileMergeDialog" timestamp="1603263358755">
+      <screen x="0" y="23" width="1920" height="986" />
+    </state>
+    <state x="928" y="230" key="MultipleFileMergeDialog/0.23.1920.982@0.23.1920.982" timestamp="1602648743793" />
+    <state x="928" y="231" key="MultipleFileMergeDialog/0.23.1920.986@0.23.1920.986" timestamp="1603263358755" />
+    <state x="725" y="168" key="RollbackChangesDialog" timestamp="1603443875986">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state x="725" y="168" key="RollbackChangesDialog/0.23.1920.980@0.23.1920.980" timestamp="1603443875986" />
+    <state x="673" y="388" key="Vcs.Push.Dialog.v2" timestamp="1603792048772">
+      <screen x="0" y="23" width="2560" height="1344" />
+    </state>
+    <state x="673" y="388" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603792048772" />
+    <state x="505" y="289" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1602473922063" />
+    <state x="505" y="289" key="Vcs.Push.Dialog.v2/0.23.1920.978@0.23.1920.978" timestamp="1602490628912" />
+    <state x="505" y="289" key="Vcs.Push.Dialog.v2/0.23.1920.980@0.23.1920.980" timestamp="1603443355926" />
+    <state x="505" y="290" key="Vcs.Push.Dialog.v2/0.23.1920.982@0.23.1920.982" timestamp="1602651918206" />
+    <state x="505" y="290" key="Vcs.Push.Dialog.v2/0.23.1920.984@0.23.1920.984" timestamp="1603265757519" />
+    <state x="505" y="291" key="Vcs.Push.Dialog.v2/0.23.1920.986@0.23.1920.986" timestamp="1603263470944" />
+    <state x="116" y="134" width="1720" height="780" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603443943690">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state x="116" y="134" width="1720" height="780" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1920.980@0.23.1920.980" timestamp="1603443943690" />
+    <state x="116" y="134" width="1720" height="780" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603444128587">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state x="116" y="134" width="1720" height="780" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.980@0.23.1920.980" timestamp="1603444128587" />
+    <state x="835" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603445620047">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state x="835" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.977@0.23.1920.977" timestamp="1602487427598" />
+    <state x="835" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.978@0.23.1920.978" timestamp="1602490607686" />
+    <state x="835" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.980@0.23.1920.980" timestamp="1603445620047" />
+    <state x="835" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.982@0.23.1920.982" timestamp="1602648727216" />
+    <state x="835" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.984@0.23.1920.984" timestamp="1603270105791" />
+    <state x="835" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.986@0.23.1920.986" timestamp="1603263135432" />
+    <state x="712" y="261" width="712" height="520" key="find.popup" timestamp="1602641088312">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state x="712" y="260" width="712" height="518" key="find.popup/0.23.1920.977@0.23.1920.977" timestamp="1602482153607" />
+    <state x="712" y="260" width="712" height="518" key="find.popup/0.23.1920.978@0.23.1920.978" timestamp="1602480650602" />
+    <state x="712" y="261" width="712" height="520" key="find.popup/0.23.1920.980@0.23.1920.980" timestamp="1602641088312" />
+    <state x="1267" y="362" width="670" height="676" key="search.everywhere.popup" timestamp="1603763512579">
+      <screen x="0" y="23" width="2560" height="1344" />
+    </state>
+    <state x="1267" y="362" width="670" height="676" key="search.everywhere.popup/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603763512579" />
+  </component>
+</project>
