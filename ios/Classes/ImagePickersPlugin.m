@@ -142,7 +142,7 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
         configuration.cellCornerRadio =5;
         configuration.allowMixSelect =NO;
         configuration.allowEditImage =enableCrop;
-        configuration.allowPreviewPhotos =NO;
+        configuration.allowPreviewPhotos =YES;
         configuration.editImageClipRatios = @[[[ZLImageClipRatio alloc] initWithTitle:[NSString stringWithFormat:@"%ld:%ld",(long)width,(long)height] whRatio: (width/1.000) / (height/1.000)]];
         configuration.allowSelectGif = isShowGif;
         if([cameraMimeType isEqualToString:@"photo"]){
