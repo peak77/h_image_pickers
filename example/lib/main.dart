@@ -33,22 +33,20 @@ class _MyAppState extends State<MyApp> {
     try {
       _galleryMode = GalleryMode.image;
       _listImagePaths = await ImagePickers.pickerPaths(
-          galleryMode: _galleryMode,
-          showGif: true,
-          selectCount: 5,
-          showCamera: true,
-          cropConfig :CropConfig(enableCrop: true,height: 1,width: 1),
-          compressSize: 500,
-          uiConfig: UIConfig(uiThemeColor: Colors.red,
-          ),
-
+        galleryMode: _galleryMode,
+        showGif: true,
+        selectCount: 5,
+        showCamera: true,
+        cropConfig: CropConfig(enableCrop: true, height: 1, width: 1),
+        compressSize: 500,
+        uiConfig: UIConfig(
+          uiThemeColor: Colors.red,
+        ),
       );
-      _listImagePaths.forEach((media){
+      _listImagePaths.forEach((media) {
         print(media.path.toString());
       });
-      setState(() {
-
-      });
+      setState(() {});
     } on PlatformException {}
   }
 
@@ -60,9 +58,7 @@ class _MyAppState extends State<MyApp> {
         selectCount: 2,
         showCamera: true,
       );
-      setState(() {
-
-      });
+      setState(() {});
       print(_listVideoPaths);
     } on PlatformException {}
   }
@@ -76,7 +72,6 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.white,
           primaryColor: Colors.white,
         ),
-
         home: Scaffold(
           appBar: AppBar(
             title: const Text('多图选择'),
@@ -87,7 +82,8 @@ class _MyAppState extends State<MyApp> {
               children: <Widget>[
                 GridView.builder(
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: _listImagePaths == null ? 0 : _listImagePaths.length,
+                    itemCount:
+                        _listImagePaths == null ? 0 : _listImagePaths.length,
                     shrinkWrap: true,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
@@ -96,7 +92,7 @@ class _MyAppState extends State<MyApp> {
                         childAspectRatio: 1.0),
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
-                        onTap: (){
+                        onTap: () {
 //                        ImagePickers.previewImage(_listImagePaths[index].path);
 
 //                      List<String> paths = [];
@@ -106,7 +102,8 @@ class _MyAppState extends State<MyApp> {
 //
 //                        ImagePickers.previewImages(paths,index);
 
-                          ImagePickers.previewImagesByMedia(_listImagePaths,index);
+                          ImagePickers.previewImagesByMedia(
+                              _listImagePaths, index);
                         },
                         child: Image.file(
                           File(
@@ -124,32 +121,33 @@ class _MyAppState extends State<MyApp> {
                 ),
                 RaisedButton(
                   onPressed: () {
-
-                    ImagePickers.openCamera(cropConfig: CropConfig(enableCrop: false, width: 2, height: 3)).then((Media media){
+                    ImagePickers.openCamera(
+                            cropConfig: CropConfig(
+                                enableCrop: false, width: 2, height: 3))
+                        .then((Media media) {
                       _listImagePaths.clear();
                       _listImagePaths.add(media);
-                      setState(() {
-
-                      });
+                      setState(() {});
                     });
                   },
                   child: Text("拍照"),
                 ),
                 RaisedButton(
                   onPressed: () {
-                    ImagePickers.openCamera(cameraMimeType: CameraMimeType.video).then((media){
+                    ImagePickers.openCamera(
+                            cameraMimeType: CameraMimeType.video)
+                        .then((media) {
                       _listVideoPaths.clear();
                       _listVideoPaths.add(media);
-                      setState(() {
-
-                      });
+                      setState(() {});
                     });
                   },
                   child: Text("拍视频"),
                 ),
                 GridView.builder(
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: _listVideoPaths == null ? 0 : _listVideoPaths.length,
+                    itemCount:
+                        _listVideoPaths == null ? 0 : _listVideoPaths.length,
                     shrinkWrap: true,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
@@ -158,8 +156,10 @@ class _MyAppState extends State<MyApp> {
                         childAspectRatio: 1.0),
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
-                        onTap: (){
-                          ImagePickers.previewVideo(_listVideoPaths[index].path,);
+                        onTap: () {
+                          ImagePickers.previewVideo(
+                            _listVideoPaths[index].path,
+                          );
                         },
                         child: Image.file(
                           File(
@@ -175,48 +175,65 @@ class _MyAppState extends State<MyApp> {
                   },
                   child: Text("选择视频"),
                 ),
-
                 InkWell(
-                  onTap: (){
-                    ImagePickers.previewImage("http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg");
-                  },
-                    child: Image.network("http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg",fit: BoxFit.cover,width: 100,height: 100,)),
+                    onTap: () {
+                      ImagePickers.previewImage(
+                          "http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg");
+                    },
+                    child: Image.network(
+                      "http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg",
+                      fit: BoxFit.cover,
+                      width: 100,
+                      height: 100,
+                    )),
                 RaisedButton(
                   onPressed: () {
-                    Future<String> future = ImagePickers.saveImageToGallery("http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg");
-                    future.then((path){
-                      print("保存图片路径："+ path);
+                    Future<String> future = ImagePickers.saveImageToGallery(
+                        "http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg");
+                    future.then((path) {
+                      print("保存图片路径：" + path);
                     });
                   },
                   child: Text("保存网络图片"),
                 ),
-                dataImagePath == "" ? Container():GestureDetector(onTap: (){
-                  ImagePickers.previewImage(dataImagePath);
-                },child: Image.file(File(dataImagePath),fit: BoxFit.cover,width: 100,height: 100,)),
+                dataImagePath == ""
+                    ? Container()
+                    : GestureDetector(
+                        onTap: () {
+                          ImagePickers.previewImage(dataImagePath);
+                        },
+                        child: Image.file(
+                          File(dataImagePath),
+                          fit: BoxFit.cover,
+                          width: 100,
+                          height: 100,
+                        )),
                 RaisedButton(
                   onPressed: () async {
-
-                    RenderRepaintBoundary boundary = globalKey.currentContext.findRenderObject();
+                    RenderRepaintBoundary boundary =
+                        globalKey.currentContext.findRenderObject();
                     ui.Image image = await boundary.toImage(pixelRatio: 3);
-                    ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+                    ByteData byteData =
+                        await image.toByteData(format: ui.ImageByteFormat.png);
                     Uint8List data = byteData.buffer.asUint8List();
 
-                    dataImagePath = await ImagePickers.saveByteDataImageToGallery(data,);
+                    dataImagePath =
+                        await ImagePickers.saveByteDataImageToGallery(
+                      data,
+                    );
 
-                    print("保存截屏图片 = "+ dataImagePath);
-                    setState(() {
-
-                    });
+                    print("保存截屏图片 = " + dataImagePath);
+                    setState(() {});
                   },
                   child: Text("保存截屏图片"),
                 ),
-
                 RaisedButton(
                   onPressed: () {
-                      Future<String> future = ImagePickers.saveVideoToGallery("http://vd4.bdstatic.com/mda-jbmn50510sid5yx5/sc/mda-jbmn50510sid5yx5.mp4");
-                      future.then((path){
-                        print("视频保存成功");
-                      });
+                    Future<String> future = ImagePickers.saveVideoToGallery(
+                        "http://vd4.bdstatic.com/mda-jbmn50510sid5yx5/sc/mda-jbmn50510sid5yx5.mp4");
+                    future.then((path) {
+                      print("视频保存成功");
+                    });
                   },
                   child: Text("保存视频"),
                 ),
