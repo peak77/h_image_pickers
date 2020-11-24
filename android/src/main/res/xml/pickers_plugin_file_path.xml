@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <paths>
-        <external-path path="" name="download"/>
-        <external-files-path name="apk" path=""/>
+        <external-path path="" name="download" />
     </paths>
 </resources>
