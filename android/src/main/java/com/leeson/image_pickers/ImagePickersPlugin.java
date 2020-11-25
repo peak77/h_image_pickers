@@ -174,7 +174,6 @@ public class ImagePickersPlugin implements FlutterPlugin,MethodChannel.MethodCal
       intent.putExtra(SelectPicsActivity.HEIGHT,height);
       intent.putExtra(SelectPicsActivity.COMPRESS_SIZE,compressSize);
       intent.putExtra(SelectPicsActivity.CAMERA_CAPTURE_MAX_TIME,cameraCaptureMaxTime);
-      Log.e("CMW","argument---------->"+ cameraCaptureMaxTime);
       //直接调用拍照或拍视频时有效
       intent.putExtra(SelectPicsActivity.CAMERA_MIME_TYPE,cameraMimeType);
       activity.startActivityForResult(intent, SELECT);
