@@ -92,6 +92,7 @@ public class SelectPicsActivity extends BaseActivity {
         compressSize = getIntent().getIntExtra(COMPRESS_SIZE, 500);
         mimeType = getIntent().getStringExtra(CAMERA_MIME_TYPE);
         cameraCaptureMaxTime = getIntent().getIntExtra(CAMERA_CAPTURE_MAX_TIME,60);
+        Log.e("CMW","cameraCaptureMaxTime------------>" + cameraCaptureMaxTime);
         startSel();
     }
 

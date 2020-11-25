@@ -56,6 +56,7 @@ class _MyAppState extends State<MyApp> {
       _listVideoPaths = await ImagePickers.pickerPaths(
         galleryMode: _galleryMode,
         selectCount: 2,
+        cameraCaptureMaxTime: 10,
         showCamera: true,
       );
       setState(() {});
