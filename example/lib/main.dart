@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
         showCamera: true,
       );
       setState(() {});
-      print(_listVideoPaths);
+      print('_listVideoPaths---->${_listVideoPaths.toString()}');
     } on PlatformException {}
   }
 

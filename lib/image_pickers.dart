@@ -155,6 +155,11 @@ class ImagePickers {
       Media media = Media();
       media.thumbPath = data["thumbPath"];
       media.path = data["path"];
+      media.videoDuration = paths[0]["videoDuration"];
+      media.videoSize = paths[0]["videoSize"];
+      debugPrint('videoSize:${media.videoSize}    videoDuration:${media.videoDuration}');
+//      media.videoWidth = paths[0]["videoWidth"];
+//      media.videoHeight = paths[0]["videoHeight"];
       media.galleryMode = galleryMode;
       medias.add(media);
     });
@@ -284,6 +289,19 @@ class Media {
   ///Video path or image path
   String path;
   GalleryMode galleryMode;
+
+  num videoWidth;
+
+  num videoHeight;
+
+  num videoSize;
+
+  num videoDuration;
+
+  @override
+  String toString() {
+    return 'Media{thumbPath: $thumbPath, path: $path, galleryMode: $galleryMode, videoWidth: $videoWidth, videoHeight: $videoHeight, videoSize: $videoSize, videoDuration: $videoDuration}';
+  }
 }
 
 /// Created by liSen on 2019/11/15 10:51.
