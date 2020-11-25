@@ -63,6 +63,7 @@ public class MethodCallImpl implements MethodChannel.MethodCallHandler, PluginRe
             Number height = methodCall.argument("height");
             Number compressSize = methodCall.argument("compressSize");
             String cameraMimeType = methodCall.argument("cameraMimeType");
+            String cameraCaptureMaxTime = methodCall.argument("cameraCaptureMaxTime");
 
             Intent intent = new Intent(activityPluginBinding.getActivity(), SelectPicsActivity.class);
             intent.putExtra(SelectPicsActivity.GALLERY_MODE,galleryMode);
@@ -73,6 +74,7 @@ public class MethodCallImpl implements MethodChannel.MethodCallHandler, PluginRe
             intent.putExtra(SelectPicsActivity.WIDTH,width);
             intent.putExtra(SelectPicsActivity.HEIGHT,height);
             intent.putExtra(SelectPicsActivity.COMPRESS_SIZE,compressSize);
+            intent.putExtra(SelectPicsActivity.CAMERA_CAPTURE_MAX_TIME,cameraCaptureMaxTime);
             //直接调用拍照或拍视频时有效
             intent.putExtra(SelectPicsActivity.CAMERA_MIME_TYPE,cameraMimeType);
             activityPluginBinding.getActivity().startActivityForResult(intent, SELECT);
@@ -122,7 +124,7 @@ public class MethodCallImpl implements MethodChannel.MethodCallHandler, PluginRe
     public boolean onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == SELECT ) {
             if (resultCode == Activity.RESULT_OK){
-                List<Map<String,String>> paths = (List<Map<String,String>>) intent.getSerializableExtra(SelectPicsActivity.COMPRESS_PATHS);
+                List<Map<String,Object>> paths = (List<Map<String,Object>>) intent.getSerializableExtra(SelectPicsActivity.COMPRESS_PATHS);
                 Log.e("onActivityResult", "onActivityResult: "+paths.size()+" == "+result);
                 if (result != null){
                     result.success(paths);

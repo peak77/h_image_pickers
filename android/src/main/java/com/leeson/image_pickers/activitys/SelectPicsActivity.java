@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 
 import com.leeson.image_pickers.AppPath;
 import com.leeson.image_pickers.R;
@@ -61,6 +62,7 @@ public class SelectPicsActivity extends BaseActivity {
 
     public static final String COMPRESS_PATHS = "COMPRESS_PATHS";//压缩的画
     public static final String CAMERA_MIME_TYPE = "CAMERA_MIME_TYPE";//直接调用拍照或拍视频时有效
+    public static final String CAMERA_CAPTURE_MAX_TIME = "CAMERA_CAPTURE_MAX_TIME";//直接调用拍照或拍视频时有效
     private Number compressSize;
     private int compressCount = 0;
     private String mode;
@@ -72,6 +74,7 @@ public class SelectPicsActivity extends BaseActivity {
     private Number width;
     private Number height;
     private String mimeType;
+    private int cameraCaptureMaxTime;
 
     @Override
     public void onCreate(@androidx.annotation.Nullable Bundle savedInstanceState) {
@@ -88,7 +91,7 @@ public class SelectPicsActivity extends BaseActivity {
         height = getIntent().getIntExtra(HEIGHT, 1);
         compressSize = getIntent().getIntExtra(COMPRESS_SIZE, 500);
         mimeType = getIntent().getStringExtra(CAMERA_MIME_TYPE);
-
+        cameraCaptureMaxTime = getIntent().getIntExtra(CAMERA_CAPTURE_MAX_TIME,60);
         startSel();
     }
 
@@ -145,6 +148,7 @@ public class SelectPicsActivity extends BaseActivity {
                 .isGif(showGif)
                 .maxSelectNum(enableCrop?1:selectCount.intValue())
                 .withAspectRatio(width.intValue(), height.intValue())
+                .recordVideoSecond(cameraCaptureMaxTime)
                 .imageSpanCount(4)// 每行显示个数 int
                 .selectionMode(enableCrop || selectCount.intValue() == 1 ? PictureConfig.SINGLE : PictureConfig.MULTIPLE)// 多选 or 单选 PictureConfig.MULTIPLE or PictureConfig.SINGLE
                 .isSingleDirectReturn(true)// 单选模式下是否直接返回
@@ -233,14 +237,14 @@ public class SelectPicsActivity extends BaseActivity {
                         if ("photo".equals(mimeType)) {
                             lubanCompress(paths);
                         }else{
-                            resolveVideoPath(paths);
+                            resolveVideoPath(paths,selectList);
                         }
                     }else{
                         if ("image".equals(mode)) {
                             //如果选择的是图片就压缩
                             lubanCompress(paths);
                         } else {
-                            resolveVideoPath(paths);
+                            resolveVideoPath(paths,selectList);
                         }
                     }
                     break;
@@ -255,16 +259,21 @@ public class SelectPicsActivity extends BaseActivity {
     }
 
 
-    private void resolveVideoPath(List<String> paths) {
-
-        List<Map<String, String>> thumbPaths = new ArrayList<>();
+    private void resolveVideoPath(List<String> paths,List<LocalMedia> selectList) {
+        List<Map<String, Object>> thumbPaths = new ArrayList<>();
         for (int i = 0; i < paths.size(); i++) {
             String path = paths.get(i);
             Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(path, MediaStore.Video.Thumbnails.FULL_SCREEN_KIND);
             String thumbPath = CommonUtils.saveBitmap(this, new AppPath(this).getAppImgDirPath(false), bitmap);
-            Map<String, String> map = new HashMap<>();
+            Map<String, Object> map = new HashMap<>();
             map.put("thumbPath", thumbPath);
             map.put("path", path);
+            LocalMedia localMedia = selectList.get(i);
+            Log.e("image_pickers","videoDuration--->"+ localMedia.getDuration() +"   "+"videoWidth--->"+localMedia.getWidth() +"   "+"videoHeight--->"+localMedia.getHeight() +"   "+"videoSize--->"+localMedia.getSize());
+            map.put("videoDuration", localMedia.getDuration());
+//            map.put("videoWidth", localMedia.getWidth());
+//            map.put("videoHeight", localMedia.getHeight());
+            map.put("videoSize", localMedia.getSize());
             thumbPaths.add(map);
         }
         Intent intent = new Intent();
