@@ -30,9 +30,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7080ff30-f4dc-4f89-a7df-5629d579afab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_pickers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/image_pickers.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/image_pickers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/image_pickers.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +116,7 @@
       <workItem from="1606212788727" duration="526000" />
       <workItem from="1606213361039" duration="232000" />
       <workItem from="1606266560226" duration="2421000" />
-      <workItem from="1606269006066" duration="2899000" />
+      <workItem from="1606269006066" duration="4281000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1571893983191</created>
@@ -436,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606204201813</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="android 新增设置拍摄时间">
+      <created>1606281049945</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1606281049946</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +537,8 @@
     <MESSAGE value="更新AFNetworking 到4.0 删除UIWebview" />
     <MESSAGE value="修改provider" />
     <MESSAGE value="拉取最新修改android10 相册拍照崩溃的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="拉取最新修改android10 相册拍照崩溃的bug" />
+    <MESSAGE value="android 新增设置拍摄时间" />
+    <option name="LAST_COMMIT_MESSAGE" value="android 新增设置拍摄时间" />
   </component>
   <component name="WindowStateProjectService">
     <state x="521" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603443086608">
@@ -553,10 +558,10 @@
       <screen x="0" y="23" width="1920" height="980" />
     </state>
     <state x="715" y="373" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.980@0.23.1920.980" timestamp="1603443844127" />
-    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1606204201256">
+    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1606281049454">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1606204201256" />
+    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1606281049454" />
     <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603768190653" />
     <state x="484" y="24" key="CommitChangelistDialog2/0.23.1920.977@0.23.1920.977" timestamp="1602487440864" />
     <state x="484" y="24" key="CommitChangelistDialog2/0.23.1920.978@0.23.1920.978" timestamp="1602490625312" />
@@ -619,10 +624,10 @@
       <screen x="0" y="23" width="1920" height="980" />
     </state>
     <state x="725" y="168" key="RollbackChangesDialog/0.23.1920.980@0.23.1920.980" timestamp="1603443875986" />
-    <state x="673" y="387" key="Vcs.Push.Dialog.v2" timestamp="1606204759653">
+    <state x="673" y="387" key="Vcs.Push.Dialog.v2" timestamp="1606281058137">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="673" y="387" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1606204759653" />
+    <state x="673" y="387" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1606281058137" />
     <state x="673" y="388" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603792048772" />
     <state x="505" y="289" key="Vcs.Push.Dialog.v2/0.23.1920.977@0.23.1920.977" timestamp="1602473922063" />
     <state x="505" y="289" key="Vcs.Push.Dialog.v2/0.23.1920.978@0.23.1920.978" timestamp="1602490628912" />

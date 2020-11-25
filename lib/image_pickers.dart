@@ -110,6 +110,7 @@ class ImagePickers {
     bool showGif: true,
     CropConfig cropConfig,
     int compressSize: 500,
+    int cameraCaptureMaxTime:60,
   }) async {
     String gMode = "image";
     if (galleryMode == GalleryMode.image) {
@@ -143,6 +144,7 @@ class ImagePickers {
       },
       'selectCount': selectCount,
       'showCamera': showCamera,
+      'cameraCaptureMaxTime': cameraCaptureMaxTime,
       'enableCrop': enableCrop,
       'width': width,
       'height': height,
