@@ -62,7 +62,8 @@ public class SelectPicsActivity extends BaseActivity {
 
     public static final String COMPRESS_PATHS = "COMPRESS_PATHS";//压缩的画
     public static final String CAMERA_MIME_TYPE = "CAMERA_MIME_TYPE";//直接调用拍照或拍视频时有效
-    public static final String CAMERA_CAPTURE_MAX_TIME = "CAMERA_CAPTURE_MAX_TIME";//直接调用拍照或拍视频时有效
+    public static final String CAMERA_CAPTURE_MAX_TIME = "CAMERA_CAPTURE_MAX_TIME";//视频最大拍摄时间
+    public static final String VIDEO_SELECT_MAX_TIME = "VIDEO_SELECT_MAX_TIME";//相册中可选视频的最大时间
     private Number compressSize;
     private int compressCount = 0;
     private String mode;
@@ -75,6 +76,7 @@ public class SelectPicsActivity extends BaseActivity {
     private Number height;
     private String mimeType;
     private int cameraCaptureMaxTime;
+    private int videoSelectMaxTime;
 
     @Override
     public void onCreate(@androidx.annotation.Nullable Bundle savedInstanceState) {
@@ -91,7 +93,8 @@ public class SelectPicsActivity extends BaseActivity {
         height = getIntent().getIntExtra(HEIGHT, 1);
         compressSize = getIntent().getIntExtra(COMPRESS_SIZE, 500);
         mimeType = getIntent().getStringExtra(CAMERA_MIME_TYPE);
-        cameraCaptureMaxTime = getIntent().getIntExtra(CAMERA_CAPTURE_MAX_TIME,60);
+        cameraCaptureMaxTime = getIntent().getIntExtra(CAMERA_CAPTURE_MAX_TIME,60 * 5);
+        videoSelectMaxTime = getIntent().getIntExtra(VIDEO_SELECT_MAX_TIME,60 * 5);
         startSel();
     }
 
@@ -113,6 +116,9 @@ public class SelectPicsActivity extends BaseActivity {
             } else {
                 pictureSelectionModel = pictureSelector.openCamera(PictureMimeType.ofVideo());
                 pictureSelectionModel.imageFormat(PictureMimeType.MIME_TYPE_VIDEO);
+                pictureSelectionModel.closeAndroidQChangeVideoWH(true);
+                pictureSelectionModel.videoMaxSecond(videoSelectMaxTime);
+
             }
         }else{
             //从相册中选择
@@ -126,6 +132,8 @@ public class SelectPicsActivity extends BaseActivity {
 
             }else{
                 pictureSelectionModel.imageFormat(PictureMimeType.MIME_TYPE_VIDEO);
+                pictureSelectionModel.closeAndroidQChangeVideoWH(true);
+                pictureSelectionModel.videoMaxSecond(videoSelectMaxTime);
             }
         }
 
@@ -160,7 +168,6 @@ public class SelectPicsActivity extends BaseActivity {
                 .showCropGrid(true)
                 .hideBottomControls(true)
                 .freeStyleCropEnabled(false)
-
                 .compress(false)// 是否压缩 true or false
                 .minimumCompressSize(Integer.MAX_VALUE)
                 .compressSavePath(getPath())//压缩图片保存地址
@@ -271,8 +278,8 @@ public class SelectPicsActivity extends BaseActivity {
             LocalMedia localMedia = selectList.get(i);
             Log.e("image_pickers","videoDuration--->"+ localMedia.getDuration() +"   "+"videoWidth--->"+localMedia.getWidth() +"   "+"videoHeight--->"+localMedia.getHeight() +"   "+"videoSize--->"+localMedia.getSize());
             map.put("videoDuration", localMedia.getDuration());
-//            map.put("videoWidth", localMedia.getWidth());
-//            map.put("videoHeight", localMedia.getHeight());
+            map.put("videoWidth", localMedia.getWidth());
+            map.put("videoHeight", localMedia.getHeight());
             map.put("videoSize", localMedia.getSize());
             thumbPaths.add(map);
         }

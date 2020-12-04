@@ -64,6 +64,7 @@ public class MethodCallImpl implements MethodChannel.MethodCallHandler, PluginRe
             Number compressSize = methodCall.argument("compressSize");
             String cameraMimeType = methodCall.argument("cameraMimeType");
             int cameraCaptureMaxTime = methodCall.argument("cameraCaptureMaxTime");
+            int videoSelectMaxTime = methodCall.argument("videoSelectMaxTime");
             Intent intent = new Intent(activityPluginBinding.getActivity(), SelectPicsActivity.class);
             intent.putExtra(SelectPicsActivity.GALLERY_MODE,galleryMode);
             intent.putExtra(SelectPicsActivity.UI_COLOR, (Serializable) uiColor);
@@ -74,6 +75,7 @@ public class MethodCallImpl implements MethodChannel.MethodCallHandler, PluginRe
             intent.putExtra(SelectPicsActivity.HEIGHT,height);
             intent.putExtra(SelectPicsActivity.COMPRESS_SIZE,compressSize);
             intent.putExtra(SelectPicsActivity.CAMERA_CAPTURE_MAX_TIME,cameraCaptureMaxTime);
+            intent.putExtra(SelectPicsActivity.VIDEO_SELECT_MAX_TIME,videoSelectMaxTime);
             //直接调用拍照或拍视频时有效
             intent.putExtra(SelectPicsActivity.CAMERA_MIME_TYPE,cameraMimeType);
             activityPluginBinding.getActivity().startActivityForResult(intent, SELECT);
