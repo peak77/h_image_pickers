@@ -161,9 +161,8 @@ class ImagePickers {
       media.path = data["path"];
       media.videoDuration = paths[0]["videoDuration"];
       media.videoSize = paths[0]["videoSize"];
-      debugPrint('videoSize:${media.videoSize}    videoDuration:${media.videoDuration}');
-//      media.videoWidth = paths[0]["videoWidth"];
-//      media.videoHeight = paths[0]["videoHeight"];
+      media.videoWidth = paths[0]["videoWidth"];
+      media.videoHeight = paths[0]["videoHeight"];
       media.galleryMode = galleryMode;
       medias.add(media);
     });
