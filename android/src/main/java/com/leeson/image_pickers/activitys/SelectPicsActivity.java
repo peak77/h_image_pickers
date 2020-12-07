@@ -21,6 +21,7 @@ import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.tools.AndroidQTransformUtils;
+import com.luck.picture.lib.tools.MediaUtils;
 import com.luck.picture.lib.tools.PictureFileUtils;
 import com.luck.picture.lib.tools.SdkVersionUtils;
 
@@ -67,7 +68,7 @@ public class SelectPicsActivity extends BaseActivity {
     private Number compressSize;
     private int compressCount = 0;
     private String mode;
-    private Map<String,Number> uiColor;
+    private Map<String, Number> uiColor;
     private Number selectCount;
     private boolean showGif;
     private boolean showCamera;
@@ -93,24 +94,24 @@ public class SelectPicsActivity extends BaseActivity {
         height = getIntent().getIntExtra(HEIGHT, 1);
         compressSize = getIntent().getIntExtra(COMPRESS_SIZE, 500);
         mimeType = getIntent().getStringExtra(CAMERA_MIME_TYPE);
-        cameraCaptureMaxTime = getIntent().getIntExtra(CAMERA_CAPTURE_MAX_TIME,60 * 5);
-        videoSelectMaxTime = getIntent().getIntExtra(VIDEO_SELECT_MAX_TIME,60 * 5);
+        cameraCaptureMaxTime = getIntent().getIntExtra(CAMERA_CAPTURE_MAX_TIME, 60 * 5);
+        videoSelectMaxTime = getIntent().getIntExtra(VIDEO_SELECT_MAX_TIME, 60 * 5);
         startSel();
     }
 
-    private void startSel(){
+    private void startSel() {
         PictureStyleUtil pictureStyleUtil = new PictureStyleUtil(this);
 
         //添加图片
         PictureSelector pictureSelector = PictureSelector.create(this);
         PictureSelectionModel pictureSelectionModel = null;
-        if (mimeType != null){
+        if (mimeType != null) {
             //直接调用拍照或拍视频时
             if ("photo".equals(mimeType)) {
                 pictureSelectionModel = pictureSelector.openCamera(PictureMimeType.ofImage());
-                if (SdkVersionUtils.checkedAndroid_Q()){
+                if (SdkVersionUtils.checkedAndroid_Q()) {
                     pictureSelectionModel.imageFormat(PictureMimeType.PNG_Q);
-                }else{
+                } else {
                     pictureSelectionModel.imageFormat(PictureMimeType.PNG);
                 }
             } else {
@@ -120,17 +121,17 @@ public class SelectPicsActivity extends BaseActivity {
                 pictureSelectionModel.videoMaxSecond(videoSelectMaxTime);
 
             }
-        }else{
+        } else {
             //从相册中选择
             pictureSelectionModel = pictureSelector.openGallery("image".equals(mode) ? PictureMimeType.ofImage() : PictureMimeType.ofVideo());
-            if ("image".equals(mode)){
-                if (SdkVersionUtils.checkedAndroid_Q()){
+            if ("image".equals(mode)) {
+                if (SdkVersionUtils.checkedAndroid_Q()) {
                     pictureSelectionModel.imageFormat(PictureMimeType.PNG_Q);
-                }else{
+                } else {
                     pictureSelectionModel.imageFormat(PictureMimeType.PNG);
                 }
 
-            }else{
+            } else {
                 pictureSelectionModel.imageFormat(PictureMimeType.MIME_TYPE_VIDEO);
                 pictureSelectionModel.closeAndroidQChangeVideoWH(true);
                 pictureSelectionModel.videoMaxSecond(videoSelectMaxTime);
@@ -154,7 +155,7 @@ public class SelectPicsActivity extends BaseActivity {
 //                .imageFormat(PictureMimeType.PNG.toLowerCase())// 拍照保存图片格式后缀,默认jpeg
                 .isCamera(showCamera)
                 .isGif(showGif)
-                .maxSelectNum(enableCrop?1:selectCount.intValue())
+                .maxSelectNum(enableCrop ? 1 : selectCount.intValue())
                 .withAspectRatio(width.intValue(), height.intValue())
                 .recordVideoSecond(cameraCaptureMaxTime)
                 .imageSpanCount(4)// 每行显示个数 int
@@ -174,6 +175,7 @@ public class SelectPicsActivity extends BaseActivity {
                 .forResult(PictureConfig.CHOOSE_REQUEST);
 
     }
+
     private String getPath() {
         String path = new AppPath(this).getAppImgDirPath(false);
         File file = new File(path);
@@ -211,16 +213,16 @@ public class SelectPicsActivity extends BaseActivity {
                         if (localMedia.isCut()) {//2.5.9 android Q 裁剪没问题
                             // 因为这个lib中 gif裁剪有问题，所以gif裁剪过就不使用裁剪地址，使用原gif地址
                             if (Build.VERSION.SDK_INT >= 29) {
-                                if (localMedia.getPath() != null && localMedia.getAndroidQToPath() != null && localMedia.getAndroidQToPath().endsWith(".gif")){
+                                if (localMedia.getPath() != null && localMedia.getAndroidQToPath() != null && localMedia.getAndroidQToPath().endsWith(".gif")) {
                                     String path = PictureFileUtils.getPath(getApplicationContext(), Uri.parse(localMedia.getPath()));
                                     paths.add(path);
-                                }else{
+                                } else {
                                     paths.add(localMedia.getCutPath());
                                 }
                             } else {
-                                if (localMedia.getPath() != null && localMedia.getPath().endsWith(".gif")){
+                                if (localMedia.getPath() != null && localMedia.getPath().endsWith(".gif")) {
                                     paths.add(localMedia.getPath());
-                                }else{
+                                } else {
                                     paths.add(localMedia.getCutPath());
                                 }
                             }
@@ -229,7 +231,7 @@ public class SelectPicsActivity extends BaseActivity {
                             if (Build.VERSION.SDK_INT >= 29) {
                                 //图片选择库 2.5.9 有bug，要这样处理
                                 String AndroidQToPath = AndroidQTransformUtils.copyPathToAndroidQ(SelectPicsActivity.this,
-                                        localMedia.getPath(), localMedia.getWidth(), localMedia.getHeight(), localMedia.getMimeType(), localMedia.getRealPath().substring(localMedia.getRealPath().lastIndexOf("/")+1));
+                                        localMedia.getPath(), localMedia.getWidth(), localMedia.getHeight(), localMedia.getMimeType(), localMedia.getRealPath().substring(localMedia.getRealPath().lastIndexOf("/") + 1));
                                 localMedia.setAndroidQToPath(AndroidQToPath);
 
                                 paths.add(localMedia.getAndroidQToPath());
@@ -239,19 +241,19 @@ public class SelectPicsActivity extends BaseActivity {
                         }
                     }
 
-                    if (mimeType != null){
+                    if (mimeType != null) {
                         //直接调用拍照或拍视频时
                         if ("photo".equals(mimeType)) {
                             lubanCompress(paths);
-                        }else{
-                            resolveVideoPath(paths,selectList);
+                        } else {
+                            resolveVideoPath(paths, selectList);
                         }
-                    }else{
+                    } else {
                         if ("image".equals(mode)) {
                             //如果选择的是图片就压缩
                             lubanCompress(paths);
                         } else {
-                            resolveVideoPath(paths,selectList);
+                            resolveVideoPath(paths, selectList);
                         }
                     }
                     break;
@@ -266,7 +268,7 @@ public class SelectPicsActivity extends BaseActivity {
     }
 
 
-    private void resolveVideoPath(List<String> paths,List<LocalMedia> selectList) {
+    private void resolveVideoPath(List<String> paths, List<LocalMedia> selectList) {
         List<Map<String, Object>> thumbPaths = new ArrayList<>();
         for (int i = 0; i < paths.size(); i++) {
             String path = paths.get(i);
@@ -276,11 +278,18 @@ public class SelectPicsActivity extends BaseActivity {
             map.put("thumbPath", thumbPath);
             map.put("path", path);
             LocalMedia localMedia = selectList.get(i);
-            Log.e("image_pickers","videoDuration--->"+ localMedia.getDuration() +"   "+"videoWidth--->"+localMedia.getWidth() +"   "+"videoHeight--->"+localMedia.getHeight() +"   "+"videoSize--->"+localMedia.getSize());
+            Log.e("image_pickers", "videoDuration--->" + localMedia.getDuration() + "   " + "videoWidth--->" + localMedia.getWidth() + "   " + "videoHeight--->" + localMedia.getHeight() + "   " + "videoSize--->" + localMedia.getSize());
             map.put("videoDuration", localMedia.getDuration());
+            int orientation = -1;
+            if (PictureMimeType.isContent(path)) {
+                 orientation = MediaUtils.getVideoOrientationForUri(getApplicationContext(), Uri.parse(path));
+            } else {
+                orientation = MediaUtils.getVideoOrientationForUrl(path);
+            }
             map.put("videoWidth", localMedia.getWidth());
             map.put("videoHeight", localMedia.getHeight());
             map.put("videoSize", localMedia.getSize());
+            map.put("videoOrientation", orientation);
             thumbPaths.add(map);
         }
         Intent intent = new Intent();

@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
       _galleryMode = GalleryMode.video;
       _listVideoPaths = await ImagePickers.pickerPaths(
         galleryMode: _galleryMode,
-        selectCount: 2,
+        selectCount: 1,
         cameraCaptureMaxTime: 10,
         showCamera: true,
       );

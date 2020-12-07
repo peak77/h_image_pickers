@@ -163,6 +163,7 @@ class ImagePickers {
       media.videoSize = paths[0]["videoSize"];
       media.videoWidth = paths[0]["videoWidth"];
       media.videoHeight = paths[0]["videoHeight"];
+      media.videoOrientation = paths[0]["videoOrientation"];
       media.galleryMode = galleryMode;
       medias.add(media);
     });
@@ -301,9 +302,11 @@ class Media {
 
   num videoDuration;
 
+  num videoOrientation;
+
   @override
   String toString() {
-    return 'Media{thumbPath: $thumbPath, path: $path, galleryMode: $galleryMode, videoWidth: $videoWidth, videoHeight: $videoHeight, videoSize: $videoSize, videoDuration: $videoDuration}';
+    return 'Media{thumbPath: $thumbPath, path: $path, videoWidth: $videoWidth, videoHeight: $videoHeight, videoSize: $videoSize, videoDuration: $videoDuration, videoOrientation: $videoOrientation}';
   }
 }
 
