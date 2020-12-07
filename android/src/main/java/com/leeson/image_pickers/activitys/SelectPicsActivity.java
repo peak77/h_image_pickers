@@ -160,7 +160,7 @@ public class SelectPicsActivity extends BaseActivity {
                 .recordVideoSecond(cameraCaptureMaxTime)
                 .imageSpanCount(4)// 每行显示个数 int
                 .selectionMode(enableCrop || selectCount.intValue() == 1 ? PictureConfig.SINGLE : PictureConfig.MULTIPLE)// 多选 or 单选 PictureConfig.MULTIPLE or PictureConfig.SINGLE
-                .isSingleDirectReturn(true)// 单选模式下是否直接返回
+                .isSingleDirectReturn(false)// 单选模式下是否直接返回
                 .previewImage(true)// 是否可预览图片 true or false
                 .enableCrop(enableCrop)// 是否裁剪 true or false
 
