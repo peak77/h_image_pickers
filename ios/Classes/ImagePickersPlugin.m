@@ -145,6 +145,8 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
         configuration.allowPreviewPhotos =YES;
         configuration.editImageClipRatios = @[[[ZLImageClipRatio alloc] initWithTitle:[NSString stringWithFormat:@"%ld:%ld",(long)width,(long)height] whRatio: (width/1.000) / (height/1.000)]];
         configuration.allowSelectGif = isShowGif;
+        configuration.maxSelectVideoDuration = 300;
+        configuration.maxRecordDuration = 5;
         if([cameraMimeType isEqualToString:@"photo"]){
             configuration.allowRecordVideo = false;
             configuration.allowTakePhoto= true;
@@ -182,7 +184,7 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
         if(cameraMimeType) {
             ZLCustomCamera *camera = [[ZLCustomCamera alloc] init];
             camera.view.frame =CGRectMake(0, -100, CXCWeight, CXCHeightX);
-            configuration.maxRecordDuration  =60;
+            configuration.maxRecordDuration  = 300;
             
             NSLog(@"%@",configuration.editImageClipRatios);
 
@@ -237,10 +239,28 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
                     NSString  *jpgPath = [NSHomeDirectory()     stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@.%@",name,[self imageType:imageData]]];
                     //保存到沙盒
                     [UIImageJPEGRepresentation(img,1.0) writeToFile:jpgPath atomically:YES];
-                    
+                    AVAsset *asset = [AVAsset assetWithURL:url];
+                       NSArray *tracks = [asset tracksWithMediaType:AVMediaTypeVideo];
+                    double width;
+                    double height;
+                       if([tracks count] > 0) {
+                           AVAssetTrack *videoTrack = [tracks objectAtIndex:0];
+                           CGAffineTransform t = videoTrack.preferredTransform;//这里的矩阵有旋转角度，转换一下即可
+                           NSLog(@"=====hello  width:%f===height:%f",videoTrack.naturalSize.width,videoTrack.naturalSize.height);//宽高
+                           width = videoTrack.naturalSize.width;
+                           height = videoTrack.naturalSize.height;
+                       }
+                    NSFileManager* manager = [NSFileManager defaultManager];
+                    long long fileSize;
+                    if ([manager fileExistsAtPath:jpgPath]){
+                       fileSize =  [[manager attributesOfItemAtPath:jpgPath error:nil] fileSize];
+                    }
                     NSDictionary *photoDic = @{
                         @"thumbPath":jpgPath,
                         @"path":jpgPath,
+                        @"videoWidth":@(width),
+                        @"videoHeight":@(height),
+                        @"videoSize":@(fileSize),
                     };
                     result(@[photoDic]);
                     return ;
@@ -299,11 +319,28 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
                             //保存到沙盒
                             [UIImageJPEGRepresentation(img,1.0) writeToFile:jpgPath atomically:YES];
                             NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),name];
-                            
-                            //取出路径
+                            AVAsset *asset1 = [AVAsset assetWithURL:url];
+                               NSArray *tracks = [asset1 tracksWithMediaType:AVMediaTypeVideo];
+                            double width;
+                            double height;
+                               if([tracks count] > 0) {
+                                   AVAssetTrack *videoTrack = [tracks objectAtIndex:0];
+                                   CGAffineTransform t = videoTrack.preferredTransform;//这里的矩阵有旋转角度，转换一下即可
+                                   NSLog(@"=====hello  width:%f===height:%f",videoTrack.naturalSize.width,videoTrack.naturalSize.height);//宽高
+                                   width = videoTrack.naturalSize.width;
+                                   height = videoTrack.naturalSize.height;
+                               }
+                            NSFileManager* manager = [NSFileManager defaultManager];
+                            long long fileSize;
+                            if ([manager fileExistsAtPath:subString]){
+                               fileSize =  [[manager attributesOfItemAtPath:subString error:nil] fileSize];
+                            }                            //取出路径
                             [arr addObject:@{
                                 @"thumbPath":[NSString stringWithFormat:@"%@",aPath3],
                                 @"path":[NSString stringWithFormat:@"%@",subString],
+                                @"videoWidth":@(width),
+                                @"videoHeight":@(height),
+                                @"videoSize":@(fileSize),
                             }];
                             //NSLog(@"%@",arr);
                             if (arr.count==assets.count) {
@@ -430,7 +467,7 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
         //vc.videoUrl =[NSString stringWithFormat:@"%@",@"http://apis.beboy.me/static/video/2019/07/20190730160222392332.mp4"];
         vc.videoUrl =[NSString stringWithFormat:@"%@",[dic objectForKey:@"path"]];
         vc.modalPresentationStyle =UIModalPresentationFullScreen;
-        
+    
         [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:vc animated:YES completion:^{
         }];
         
@@ -808,4 +845,7 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
     }
     return @"";
 }
+
+
+
 @end
