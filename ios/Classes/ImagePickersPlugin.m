@@ -146,7 +146,7 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
         configuration.editImageClipRatios = @[[[ZLImageClipRatio alloc] initWithTitle:[NSString stringWithFormat:@"%ld:%ld",(long)width,(long)height] whRatio: (width/1.000) / (height/1.000)]];
         configuration.allowSelectGif = isShowGif;
         configuration.maxSelectVideoDuration = 300;
-        configuration.maxRecordDuration = 5;
+        configuration.maxRecordDuration = 300;
         if([cameraMimeType isEqualToString:@"photo"]){
             configuration.allowRecordVideo = false;
             configuration.allowTakePhoto= true;
