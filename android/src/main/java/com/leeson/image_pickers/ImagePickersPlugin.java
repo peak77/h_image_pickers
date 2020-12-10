@@ -162,8 +162,8 @@ public class ImagePickersPlugin implements FlutterPlugin,MethodChannel.MethodCal
       Number height = methodCall.argument("height");
       Number compressSize = methodCall.argument("compressSize");
       String cameraMimeType = methodCall.argument("cameraMimeType");
-      int cameraCaptureMaxTime = methodCall.argument("cameraCaptureMaxTime");
-      int videoSelectMaxTime = methodCall.argument("videoSelectMaxTime");
+      Number cameraCaptureMaxTime = methodCall.argument("cameraCaptureMaxTime");
+      Number videoSelectMaxTime = methodCall.argument("videoSelectMaxTime");
       Intent intent = new Intent(activity, SelectPicsActivity.class);
       intent.putExtra(SelectPicsActivity.GALLERY_MODE,galleryMode);
       intent.putExtra(SelectPicsActivity.UI_COLOR, (Serializable) uiColor);
