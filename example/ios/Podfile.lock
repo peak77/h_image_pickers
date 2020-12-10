@@ -32,7 +32,7 @@ DEPENDENCIES:
   - image_pickers (from `.symlinks/plugins/image_pickers/ios`)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - SDWebImage
     - ZLPhotoBrowser
@@ -46,10 +46,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  image_pickers: 385a46cab76b168c7a4d151270aec4bf6c14a82b
+  image_pickers: ad2d49c922387502a74b97a2910ad0dcae0ab31b
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   ZLPhotoBrowser: d5dbc47fa9fa6679c67b35e57dfc4fcfc7a7eee4
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: 981987d964b5b60696f550e42f9a53b8c217f38e
 
-COCOAPODS: 1.10.0.beta.2
+COCOAPODS: 1.9.1
