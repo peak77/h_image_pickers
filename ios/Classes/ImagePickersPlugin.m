@@ -131,7 +131,8 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
         
         BOOL showCamera =[[dic objectForKey:@"showCamera"] boolValue];//显示摄像头
         isShowGif =[[dic objectForKey:@"showGif"] boolValue];//是否选择gif
-        
+        NSInteger cameraCaptureMaxTime = [[dic objectForKey:@"cameraCaptureMaxTime"] integerValue];
+        NSInteger videoSelectMaxTime = [[dic objectForKey:@"videoSelectMaxTime"] integerValue];
         NSString *cameraMimeType =[dic objectForKey:@"cameraMimeType"];//type   photo video 若不存在则为带相册的，若存在则直接打开相册相机
         
         ZLPhotoConfiguration *configuration =[ZLPhotoConfiguration default];
@@ -145,8 +146,8 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
         configuration.allowPreviewPhotos =YES;
         configuration.editImageClipRatios = @[[[ZLImageClipRatio alloc] initWithTitle:[NSString stringWithFormat:@"%ld:%ld",(long)width,(long)height] whRatio: (width/1.000) / (height/1.000)]];
         configuration.allowSelectGif = isShowGif;
-        configuration.maxSelectVideoDuration = 120;
-        configuration.maxRecordDuration = 120;
+        configuration.maxSelectVideoDuration = videoSelectMaxTime;
+        configuration.maxRecordDuration = cameraCaptureMaxTime;
         if([cameraMimeType isEqualToString:@"photo"]){
             configuration.allowRecordVideo = false;
             configuration.allowTakePhoto= true;
