@@ -33,11 +33,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import top.zibin.luban.CompressionPredicate;
-import top.zibin.luban.Luban;
-import top.zibin.luban.OnCompressListener;
-import top.zibin.luban.OnRenameListener;
-
 
 /**
  * Created by lisen on 2018-09-11.
@@ -266,7 +261,6 @@ public class SelectPicsActivity extends BaseActivity {
         }
     }
 
-
     private void resolveVideoPath(List<String> paths, List<LocalMedia> selectList) {
         List<Map<String, Object>> thumbPaths = new ArrayList<>();
         for (int i = 0; i < paths.size(); i++) {
@@ -298,8 +292,6 @@ public class SelectPicsActivity extends BaseActivity {
     }
 
     private void lubanCompress(final List<String> paths) {
-
-
         final List<Map<String, String>> lubanCompressPaths = new ArrayList<>();
         for (String path : paths) {
             Map<String, String> map = new HashMap<>();
@@ -308,55 +300,12 @@ public class SelectPicsActivity extends BaseActivity {
             lubanCompressPaths.add(map);
         }
         compressFinish(paths, lubanCompressPaths);
-
-       /* Luban.with(this)
-                .load(paths)
-                .ignoreBy(compressSize.intValue())
-                .setTargetDir(getPath())
-                .filter(new CompressionPredicate() {
-                    @Override
-                    public boolean apply(String path) {
-                        return !path.endsWith(".gif");
-                    }
-                })
-                .setRenameListener(new OnRenameListener() {
-                    @Override
-                    public String rename(String filePath) {
-                        return filePath.substring(filePath.lastIndexOf("/"));
-                    }
-                })
-                .setCompressListener(new OnCompressListener() {
-                    @Override
-                    public void onStart() {
-                    }
-
-                    @Override
-                    public void onSuccess(File file) {
-                        // 压缩成功后调用，返回压缩后的图片文件
-                        Map<String, String> map = new HashMap<>();
-                        map.put("thumbPath", file.getAbsolutePath());
-                        map.put("path", file.getAbsolutePath());
-                        Log.e("CMW","lubanCompress--------->"+ file.getAbsolutePath());
-                        lubanCompressPaths.add(map);
-                        compressCount++;
-                        compressFinish(paths, lubanCompressPaths);
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        // 当压缩过程出现问题时调用
-                        compressCount++;
-                        compressFinish(paths, lubanCompressPaths);
-                    }
-                }).launch();*/
     }
 
     private void compressFinish(List<String> paths, List<Map<String, String>> compressPaths) {
-//        if (compressCount == paths.size()) {
-            Intent intent = new Intent();
-            intent.putExtra(COMPRESS_PATHS, (Serializable) compressPaths);
-            setResult(RESULT_OK, intent);
-            finish();
-//        }
+        Intent intent = new Intent();
+        intent.putExtra(COMPRESS_PATHS, (Serializable) compressPaths);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
