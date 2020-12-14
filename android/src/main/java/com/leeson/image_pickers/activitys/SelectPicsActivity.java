@@ -169,7 +169,6 @@ public class SelectPicsActivity extends BaseActivity {
                 .showCropGrid(true)
                 .hideBottomControls(true)
                 .freeStyleCropEnabled(false)
-                .compress(false)// 是否压缩 true or false
                 .minimumCompressSize(Integer.MAX_VALUE)
                 .compressSavePath(getPath())//压缩图片保存地址
                 .forResult(PictureConfig.CHOOSE_REQUEST);
@@ -282,7 +281,7 @@ public class SelectPicsActivity extends BaseActivity {
             map.put("videoDuration", localMedia.getDuration());
             int orientation = -1;
             if (PictureMimeType.isContent(path)) {
-                 orientation = MediaUtils.getVideoOrientationForUri(getApplicationContext(), Uri.parse(path));
+                orientation = MediaUtils.getVideoOrientationForUri(getApplicationContext(), Uri.parse(path));
             } else {
                 orientation = MediaUtils.getVideoOrientationForUrl(path);
             }
@@ -299,8 +298,18 @@ public class SelectPicsActivity extends BaseActivity {
     }
 
     private void lubanCompress(final List<String> paths) {
+
+
         final List<Map<String, String>> lubanCompressPaths = new ArrayList<>();
-        Luban.with(this)
+        for (String path : paths) {
+            Map<String, String> map = new HashMap<>();
+            map.put("thumbPath", path);
+            map.put("path", path);
+            lubanCompressPaths.add(map);
+        }
+        compressFinish(paths, lubanCompressPaths);
+
+       /* Luban.with(this)
                 .load(paths)
                 .ignoreBy(compressSize.intValue())
                 .setTargetDir(getPath())
@@ -327,6 +336,7 @@ public class SelectPicsActivity extends BaseActivity {
                         Map<String, String> map = new HashMap<>();
                         map.put("thumbPath", file.getAbsolutePath());
                         map.put("path", file.getAbsolutePath());
+                        Log.e("CMW","lubanCompress--------->"+ file.getAbsolutePath());
                         lubanCompressPaths.add(map);
                         compressCount++;
                         compressFinish(paths, lubanCompressPaths);
@@ -338,15 +348,15 @@ public class SelectPicsActivity extends BaseActivity {
                         compressCount++;
                         compressFinish(paths, lubanCompressPaths);
                     }
-                }).launch();
+                }).launch();*/
     }
 
     private void compressFinish(List<String> paths, List<Map<String, String>> compressPaths) {
-        if (compressCount == paths.size()) {
+//        if (compressCount == paths.size()) {
             Intent intent = new Intent();
             intent.putExtra(COMPRESS_PATHS, (Serializable) compressPaths);
             setResult(RESULT_OK, intent);
             finish();
-        }
+//        }
     }
 }
