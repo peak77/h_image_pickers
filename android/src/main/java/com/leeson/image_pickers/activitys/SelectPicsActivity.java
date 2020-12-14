@@ -14,6 +14,7 @@ import com.leeson.image_pickers.AppPath;
 import com.leeson.image_pickers.R;
 import com.leeson.image_pickers.utils.CommonUtils;
 import com.leeson.image_pickers.utils.GlideEngine;
+import com.leeson.image_pickers.utils.ImageCompressUtils;
 import com.leeson.image_pickers.utils.PictureStyleUtil;
 import com.luck.picture.lib.PictureSelectionModel;
 import com.luck.picture.lib.PictureSelector;
@@ -165,32 +166,13 @@ public class SelectPicsActivity extends BaseActivity {
                 .hideBottomControls(true)
                 .freeStyleCropEnabled(false)
                 .minimumCompressSize(Integer.MAX_VALUE)
-                .compressSavePath(getPath())//压缩图片保存地址
+                .compressSavePath(ImageCompressUtils.getPath(getBaseContext()))//压缩图片保存地址
                 .forResult(PictureConfig.CHOOSE_REQUEST);
 
     }
 
-    private String getPath() {
-        String path = new AppPath(this).getAppImgDirPath(false);
-        File file = new File(path);
-        if (file.mkdirs()) {
-            createNomedia(path);
-            return path;
-        }
-        createNomedia(path);
-        return path;
-    }
 
-    private void createNomedia(String path) {
-        File nomedia = new File(path, ".nomedia");
-        if (!nomedia.exists()) {
-            try {
-                nomedia.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

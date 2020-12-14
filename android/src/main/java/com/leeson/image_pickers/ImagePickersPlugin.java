@@ -9,6 +9,8 @@ import com.leeson.image_pickers.activitys.PermissionActivity;
 import com.leeson.image_pickers.activitys.PhotosActivity;
 import com.leeson.image_pickers.activitys.SelectPicsActivity;
 import com.leeson.image_pickers.activitys.VideoActivity;
+import com.leeson.image_pickers.utils.CompressCallBack;
+import com.leeson.image_pickers.utils.ImageCompressUtils;
 import com.leeson.image_pickers.utils.Saver;
 
 import java.io.Serializable;
@@ -216,6 +218,16 @@ public class ImagePickersPlugin implements FlutterPlugin,MethodChannel.MethodCal
               ,Manifest.permission.READ_EXTERNAL_STORAGE});
       data = (byte[])methodCall.argument("uint8List");
       activity.startActivityForResult(intent, SAVE_IMAGE_DATA);
+    } else if("imageCompress".equals(methodCall.method)){
+      List<String> paths = methodCall.argument("needCompressImages");
+      Number compressSize = methodCall.argument("compressSize");
+      ImageCompressUtils.compressImages(activity, paths, compressSize.intValue(), new CompressCallBack() {
+        @Override
+        public void onCompressComplete(List<Map<String, String>> path) {
+          Log.e("CMW","path-------->" + path.toString());
+          result.success(path);
+        }
+      });
     }else {
       result.notImplemented();
     }

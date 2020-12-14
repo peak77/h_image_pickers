@@ -22,7 +22,22 @@ enum CameraMimeType {
 
 class ImagePickers {
   static const MethodChannel _channel =
-      const MethodChannel('flutter/image_pickers');
+  const MethodChannel('flutter/image_pickers');
+
+
+
+  static Future<List<String>> compressImages(List<String> process,num size) async{
+    Map<String, dynamic> params = <String, dynamic>{
+      'needCompressImages':process,
+      'compressSize': size,
+    };
+    List<dynamic> paths = await _channel.invokeMethod('imageCompress', params);
+    List<String> result = List();
+    for(var item in paths){
+      result.add(item.toString());
+    }
+    return result;
+  }
 
   /// 返回拍摄的图片或视频的信息 Return information of the selected picture or video
   ///
@@ -71,7 +86,7 @@ class ImagePickers {
       'cameraMimeType': mimeType,
     };
     final List<dynamic> paths =
-        await _channel.invokeMethod('getPickerPaths', params);
+    await _channel.invokeMethod('getPickerPaths', params);
 
     if (paths != null && paths.length > 0) {
       Media media = Media();
@@ -110,8 +125,8 @@ class ImagePickers {
     bool showGif: true,
     CropConfig cropConfig,
     int compressSize: 500,
-    int cameraCaptureMaxTime: 60 * 5,
-    int videoSelectMaxTime: 60 * 5,
+    int cameraCaptureMaxTime:60 * 5,
+    int videoSelectMaxTime:60 * 5,
   }) async {
     String gMode = "image";
     if (galleryMode == GalleryMode.image) {
@@ -153,7 +168,7 @@ class ImagePickers {
       'compressSize': compressSize < 50 ? 50 : compressSize,
     };
     final List<dynamic> paths =
-        await _channel.invokeMethod('getPickerPaths', params);
+    await _channel.invokeMethod('getPickerPaths', params);
     List<Media> medias = List();
     paths.forEach((data) {
       Media media = Media();
@@ -202,7 +217,7 @@ class ImagePickers {
   static previewImagesByMedia(List<Media> imageMedias, int initIndex) {
     if (imageMedias != null && imageMedias.length > 0) {
       List<String> paths =
-          imageMedias.map((Media media) => media.path).toList();
+      imageMedias.map((Media media) => media.path).toList();
       previewImages(paths, initIndex);
     }
   }
@@ -227,13 +242,13 @@ class ImagePickers {
   ///
 
   static Future<String> saveByteDataImageToGallery(
-    Uint8List data,
-  ) async {
+      Uint8List data,
+      ) async {
     final Map<String, dynamic> params = <String, dynamic>{
       'uint8List': data,
     };
     String path =
-        await _channel.invokeMethod('saveByteDataImageToGallery', params);
+    await _channel.invokeMethod('saveByteDataImageToGallery', params);
     return path;
   }
 

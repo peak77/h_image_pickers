@@ -43,7 +43,13 @@ class _MyAppState extends State<MyApp> {
           uiThemeColor: Colors.red,
         ),
       );
-      _listImagePaths.forEach((media) {
+      List<String> paths = List();
+      for(Media item in _listImagePaths){
+        paths.add(item.path);
+      }
+
+      List<String> compressPath = await ImagePickers.compressImages(paths,500);
+      compressPath.forEach((media) {
         print(media.toString());
       });
       setState(() {});
@@ -189,11 +195,14 @@ class _MyAppState extends State<MyApp> {
                     )),
                 RaisedButton(
                   onPressed: () {
-                    Future<String> future = ImagePickers.saveImageToGallery(
+                    /*Future<String> future = ImagePickers.saveImageToGallery(
                         "http://i1.sinaimg.cn/ent/d/2008-06-04/U105P28T3D2048907F326DT20080604225106.jpg");
                     future.then((path) {
                       print("保存图片路径：" + path);
-                    });
+                    });*/
+
+
+
                   },
                   child: Text("保存网络图片"),
                 ),

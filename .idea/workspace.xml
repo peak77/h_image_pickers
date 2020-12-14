@@ -29,11 +29,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7080ff30-f4dc-4f89-a7df-5629d579afab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/leeson/image_pickers/utils/CompressCallBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/leeson/image_pickers/utils/ImageCompressUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/leeson/image_pickers/ImagePickersPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/leeson/image_pickers/ImagePickersPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/leeson/image_pickers/activitys/SelectPicsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/leeson/image_pickers/activitys/SelectPicsActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/image_pickers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/image_pickers.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,14 +148,9 @@
       <workItem from="1607756179975" duration="1657000" />
       <workItem from="1607913450091" duration="888000" />
       <workItem from="1607915892198" duration="30000" />
-      <workItem from="1607916961781" duration="3826000" />
-    </task>
-    <task id="LOCAL-00009" summary="拍照，录制视频">
-      <created>1573809502015</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1573809502015</updated>
+      <workItem from="1607916961781" duration="3869000" />
+      <workItem from="1607927643495" duration="2040000" />
+      <workItem from="1607930746274" duration="1051000" />
     </task>
     <task id="LOCAL-00010" summary="拍照，录制视频">
       <created>1574054834320</created>
@@ -488,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607923677802</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="去除android 压缩逻辑 换成上传是压缩">
+      <created>1607927280837</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1607927280837</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +571,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/example/ios/.symlinks/plugins/image_pickers" />
     </ignored-roots>
-    <MESSAGE value="修复安卓9无法加载图片问题" />
     <MESSAGE value="ui颜色" />
     <MESSAGE value="拍照，录制视频" />
     <MESSAGE value="glide无法找到问题" />
@@ -589,7 +595,8 @@
     <MESSAGE value="android 拍照修改" />
     <MESSAGE value="不压缩" />
     <MESSAGE value="android 图片不压缩" />
-    <option name="LAST_COMMIT_MESSAGE" value="android 图片不压缩" />
+    <MESSAGE value="去除android 压缩逻辑 换成上传是压缩" />
+    <option name="LAST_COMMIT_MESSAGE" value="去除android 压缩逻辑 换成上传是压缩" />
   </component>
   <component name="WindowStateProjectService">
     <state x="521" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603443086608">
@@ -610,10 +617,10 @@
       <screen x="0" y="23" width="1920" height="980" />
     </state>
     <state x="715" y="373" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.980@0.23.1920.980" timestamp="1603443844127" />
-    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1607923677371">
+    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1607927280443">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607923677371" />
+    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607927280443" />
     <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603768190653" />
     <state x="293" y="23" key="CommitChangelistDialog2/0.23.1280.717@0.23.1280.717" timestamp="1607589163674" />
     <state x="293" y="23" key="CommitChangelistDialog2/0.23.1280.722@0.23.1280.722" timestamp="1607332372092" />
@@ -628,10 +635,10 @@
     </state>
     <state x="183" y="197" width="2048" height="1072" key="DiffContextDialog/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1606282889359" />
     <state x="137" y="150" width="1536" height="784" key="DiffContextDialog/0.23.1920.980@0.23.1920.980" timestamp="1603443943690" />
-    <state width="2400" height="779" key="GridCell.Tab.0.bottom" timestamp="1607927243035">
+    <state width="2400" height="593" key="GridCell.Tab.0.bottom" timestamp="1607931782631">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state width="2400" height="779" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607927243035" />
+    <state width="2400" height="593" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607931782631" />
     <state width="1238" height="446" key="GridCell.Tab.0.bottom/0.23.1280.714@0.23.1280.714" timestamp="1607754036892" />
     <state width="1238" height="378" key="GridCell.Tab.0.bottom/0.23.1280.717@0.23.1280.717" timestamp="1607756446480" />
     <state width="1238" height="378" key="GridCell.Tab.0.bottom/0.23.1280.722@0.23.1280.722" timestamp="1607759894445" />
@@ -641,10 +648,10 @@
     <state width="1878" height="234" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1603445418205" />
     <state width="912" height="525" key="GridCell.Tab.0.bottom/0.23.1920.984@0.23.1920.984" timestamp="1603265863015" />
     <state width="912" height="244" key="GridCell.Tab.0.bottom/0.23.1920.986@0.23.1920.986" timestamp="1603263493526" />
-    <state width="2400" height="779" key="GridCell.Tab.0.center" timestamp="1607927243034">
+    <state width="2400" height="593" key="GridCell.Tab.0.center" timestamp="1607931782629">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state width="2400" height="779" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607927243034" />
+    <state width="2400" height="593" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607931782629" />
     <state width="1238" height="446" key="GridCell.Tab.0.center/0.23.1280.714@0.23.1280.714" timestamp="1607754036891" />
     <state width="1238" height="378" key="GridCell.Tab.0.center/0.23.1280.717@0.23.1280.717" timestamp="1607756446479" />
     <state width="1238" height="378" key="GridCell.Tab.0.center/0.23.1280.722@0.23.1280.722" timestamp="1607759894444" />
@@ -654,10 +661,10 @@
     <state width="1878" height="234" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1603445418204" />
     <state width="912" height="525" key="GridCell.Tab.0.center/0.23.1920.984@0.23.1920.984" timestamp="1603265863014" />
     <state width="912" height="244" key="GridCell.Tab.0.center/0.23.1920.986@0.23.1920.986" timestamp="1603263493523" />
-    <state width="2400" height="779" key="GridCell.Tab.0.left" timestamp="1607927243033">
+    <state width="2400" height="593" key="GridCell.Tab.0.left" timestamp="1607931782628">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state width="2400" height="779" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607927243033" />
+    <state width="2400" height="593" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607931782628" />
     <state width="1238" height="446" key="GridCell.Tab.0.left/0.23.1280.714@0.23.1280.714" timestamp="1607754036891" />
     <state width="1238" height="378" key="GridCell.Tab.0.left/0.23.1280.717@0.23.1280.717" timestamp="1607756446479" />
     <state width="1238" height="378" key="GridCell.Tab.0.left/0.23.1280.722@0.23.1280.722" timestamp="1607759894443" />
@@ -667,10 +674,10 @@
     <state width="1878" height="234" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1603445418204" />
     <state width="912" height="525" key="GridCell.Tab.0.left/0.23.1920.984@0.23.1920.984" timestamp="1603265863013" />
     <state width="912" height="244" key="GridCell.Tab.0.left/0.23.1920.986@0.23.1920.986" timestamp="1603263493523" />
-    <state width="2400" height="779" key="GridCell.Tab.0.right" timestamp="1607927243035">
+    <state width="2400" height="593" key="GridCell.Tab.0.right" timestamp="1607931782630">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state width="2400" height="779" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607927243035" />
+    <state width="2400" height="593" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607931782630" />
     <state width="1238" height="446" key="GridCell.Tab.0.right/0.23.1280.714@0.23.1280.714" timestamp="1607754036892" />
     <state width="1238" height="378" key="GridCell.Tab.0.right/0.23.1280.717@0.23.1280.717" timestamp="1607756446479" />
     <state width="1238" height="378" key="GridCell.Tab.0.right/0.23.1280.722@0.23.1280.722" timestamp="1607759894444" />
@@ -705,10 +712,10 @@
       <screen x="0" y="23" width="1280" height="717" />
     </state>
     <state x="128" y="23" key="SettingsEditor/0.23.1280.717@0.23.1280.717" timestamp="1607587115495" />
-    <state x="673" y="387" key="Vcs.Push.Dialog.v2" timestamp="1607923707329">
+    <state x="673" y="387" key="Vcs.Push.Dialog.v2" timestamp="1607927286838">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="673" y="387" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607923707329" />
+    <state x="673" y="387" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607927286838" />
     <state x="673" y="388" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603792048772" />
     <state x="337" y="217" key="Vcs.Push.Dialog.v2/0.23.1280.714@0.23.1280.714" timestamp="1607337586756" />
     <state x="337" y="219" key="Vcs.Push.Dialog.v2/0.23.1280.722@0.23.1280.722" timestamp="1607589478405" />
@@ -722,10 +729,15 @@
       <screen x="0" y="23" width="1920" height="980" />
     </state>
     <state x="116" y="134" width="1720" height="780" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1920.980@0.23.1920.980" timestamp="1603443943690" />
-    <state x="116" y="134" width="1720" height="780" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603444128587">
-      <screen x="0" y="23" width="1920" height="980" />
+    <state x="155" y="175" width="2294" height="1067" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607930727388">
+      <screen x="0" y="23" width="2560" height="1340" />
     </state>
+    <state x="155" y="175" width="2294" height="1067" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607930727388" />
     <state x="116" y="134" width="1720" height="780" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1920.980@0.23.1920.980" timestamp="1603444128587" />
+    <state x="181" y="155" width="2242" height="1103" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1607930204342">
+      <screen x="0" y="23" width="2560" height="1340" />
+    </state>
+    <state x="181" y="155" width="2242" height="1103" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607930204342" />
     <state x="835" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603445620047">
       <screen x="0" y="23" width="1920" height="980" />
     </state>
@@ -748,10 +760,10 @@
     </state>
     <state x="893" y="538" key="git4idea.merge.GitPullDialog/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607913616143" />
     <state x="447" y="299" key="git4idea.merge.GitPullDialog/0.23.1280.717@0.23.1280.717" timestamp="1607589170773" />
-    <state x="1267" y="361" width="670" height="674" key="search.everywhere.popup" timestamp="1607913539717">
+    <state x="1267" y="361" width="670" height="674" key="search.everywhere.popup" timestamp="1607930802156">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="1267" y="361" width="670" height="674" key="search.everywhere.popup/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607913539717" />
+    <state x="1267" y="361" width="670" height="674" key="search.everywhere.popup/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607930802156" />
     <state x="1267" y="362" width="670" height="676" key="search.everywhere.popup/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603763512579" />
     <state x="634" y="203" width="670" height="360" key="search.everywhere.popup/0.23.1280.714@0.23.1280.714" timestamp="1607753080313" />
   </component>
