@@ -163,7 +163,7 @@ public class SelectPicsActivity extends BaseActivity {
                 .isSingleDirectReturn(false)// 单选模式下是否直接返回
                 .previewImage(true)// 是否可预览图片 true or false
                 .enableCrop(enableCrop)// 是否裁剪 true or false
-
+                .isCompress(false)
                 .circleDimmedLayer(false)
                 .showCropFrame(true)
                 .showCropGrid(true)

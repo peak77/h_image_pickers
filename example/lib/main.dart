@@ -37,14 +37,14 @@ class _MyAppState extends State<MyApp> {
         showGif: true,
         selectCount: 5,
         showCamera: true,
-        cropConfig: CropConfig(enableCrop: true, height: 1, width: 1),
+        cropConfig: CropConfig(enableCrop: false, height: 1, width: 1),
         compressSize: 500,
         uiConfig: UIConfig(
           uiThemeColor: Colors.red,
         ),
       );
       _listImagePaths.forEach((media) {
-        print(media.path.toString());
+        print(media.toString());
       });
       setState(() {});
     } on PlatformException {}
