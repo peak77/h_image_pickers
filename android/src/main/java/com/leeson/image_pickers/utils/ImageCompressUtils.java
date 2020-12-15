@@ -1,8 +1,12 @@
 package com.leeson.image_pickers.utils;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.leeson.image_pickers.AppPath;
+import com.luck.picture.lib.compress.Luban;
+import com.luck.picture.lib.compress.OnCompressListener;
+import com.luck.picture.lib.entity.LocalMedia;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,8 +15,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import top.zibin.luban.Luban;
-import top.zibin.luban.OnCompressListener;
 
 
 /**
@@ -39,6 +41,13 @@ public class ImageCompressUtils {
                     }
 
                     @Override
+                    public void onSuccess(List<LocalMedia> list) {
+                        for (LocalMedia path:list) {
+                            Log.e("CMW","onSuccess---------->"+ path.getPath());
+                        }
+                    }
+
+              /*      @Override
                     public void onSuccess(File file) {
                         // 压缩成功后调用，返回压缩后的图片文件
                         Map<String, String> map = new HashMap<>();
@@ -49,18 +58,19 @@ public class ImageCompressUtils {
                         if(compressCount == paths.size()){
                             callback.onCompressComplete(lubanCompressPaths);
                         }
-                    }
+                    }*/
 
                     @Override
                     public void onError(Throwable e) {
-                        Map<String, String> map = new HashMap<>();
+                        Log.e("CMW","e-------->" + e.getMessage());
+                       /* Map<String, String> map = new HashMap<>();
                         map.put("thumbPath", paths.get(compressCount));
                         map.put("path", paths.get(compressCount));
                         // 当压缩过程出现问题时调用
                         compressCount++;
                         if(compressCount == paths.size()){
                             callback.onCompressComplete(lubanCompressPaths);
-                        }
+                        }*/
                     }
                 }).launch();
 

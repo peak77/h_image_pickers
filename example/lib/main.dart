@@ -39,9 +39,9 @@ class _MyAppState extends State<MyApp> {
         showCamera: true,
         cropConfig: CropConfig(enableCrop: false, height: 1, width: 1),
         compressSize: 50 * 1024,
-        uiConfig: UIConfig(
+   /*     uiConfig: UIConfig(
           uiThemeColor: Colors.red,
-        ),
+        ),*/
       );
       List<String> paths = List();
       for(Media item in _listImagePaths){
@@ -49,9 +49,9 @@ class _MyAppState extends State<MyApp> {
       }
 
       List<String> compressPath = await ImagePickers.compressImages(paths,500);
-      compressPath.forEach((media) {
+    /*  compressPath.forEach((media) {
         print(media.toString());
-      });
+      });*/
       setState(() {});
     } on PlatformException {}
   }
