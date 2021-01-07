@@ -36,8 +36,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7080ff30-f4dc-4f89-a7df-5629d579afab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/res/layout/activity_select_pics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/res/layout/activity_select_pics.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,14 +155,7 @@
       <workItem from="1608256230776" duration="26000" />
       <workItem from="1609989435774" duration="95000" />
       <workItem from="1609990048793" duration="26000" />
-      <workItem from="1609990657458" duration="1787000" />
-    </task>
-    <task id="LOCAL-00012" summary="拍照，录制视频">
-      <created>1574058466646</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1574058466646</updated>
+      <workItem from="1609990657458" duration="6656000" />
     </task>
     <task id="LOCAL-00013" summary="拍照，录制视频">
       <created>1574066055133</created>
@@ -501,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608001248592</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="去除压缩，使用新的压缩框架">
+      <created>1610000064359</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1610000064359</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,10 +634,10 @@
       <screen x="0" y="23" width="1920" height="980" />
     </state>
     <state x="715" y="373" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.980@0.23.1920.980" timestamp="1603443844127" />
-    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1608001248254">
+    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1610000064025">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1608001248254" />
+    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1610000064025" />
     <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603768190653" />
     <state x="293" y="23" key="CommitChangelistDialog2/0.23.1280.717@0.23.1280.717" timestamp="1607589163674" />
     <state x="293" y="23" key="CommitChangelistDialog2/0.23.1280.722@0.23.1280.722" timestamp="1607332372092" />
@@ -648,10 +647,10 @@
     <state x="954" y="23" key="CommitChangelistDialog2/0.23.1920.982@0.23.1920.982" timestamp="1602651910863" />
     <state x="954" y="23" key="CommitChangelistDialog2/0.23.1920.984@0.23.1920.984" timestamp="1603270118375" />
     <state x="954" y="23" key="CommitChangelistDialog2/0.23.1920.986@0.23.1920.986" timestamp="1603263467804" />
-    <state x="183" y="197" width="2048" height="1072" key="DiffContextDialog" timestamp="1606282889359">
+    <state x="183" y="197" width="2048" height="1072" key="DiffContextDialog" timestamp="1610000061406">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="183" y="197" width="2048" height="1072" key="DiffContextDialog/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1606282889359" />
+    <state x="183" y="197" width="2048" height="1072" key="DiffContextDialog/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1610000061406" />
     <state x="137" y="150" width="1536" height="784" key="DiffContextDialog/0.23.1920.980@0.23.1920.980" timestamp="1603443943690" />
     <state width="2217" height="448" key="GridCell.Tab.0.bottom" timestamp="1609990794885">
       <screen x="0" y="23" width="2560" height="1340" />
@@ -765,18 +764,19 @@
     <state x="835" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.982@0.23.1920.982" timestamp="1602648727216" />
     <state x="835" y="367" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.984@0.23.1920.984" timestamp="1603270105791" />
     <state x="835" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.986@0.23.1920.986" timestamp="1603263135432" />
-    <state x="475" y="23" width="578" height="717" key="find.popup" timestamp="1607495909264">
-      <screen x="0" y="23" width="1280" height="717" />
+    <state x="950" y="23" width="1156" height="1340" key="find.popup" timestamp="1610005304986">
+      <screen x="0" y="23" width="2560" height="1340" />
     </state>
+    <state x="950" y="23" width="1156" height="1340" key="find.popup/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1610005304986" />
     <state x="475" y="23" width="578" height="717" key="find.popup/0.23.1280.717@0.23.1280.717" timestamp="1607495909264" />
     <state x="475" y="23" width="578" height="724" key="find.popup/0.23.1280.724@0.23.1280.724" timestamp="1607325519689" />
     <state x="712" y="260" width="712" height="518" key="find.popup/0.23.1920.977@0.23.1920.977" timestamp="1602482153607" />
     <state x="712" y="260" width="712" height="518" key="find.popup/0.23.1920.978@0.23.1920.978" timestamp="1602480650602" />
     <state x="712" y="261" width="712" height="520" key="find.popup/0.23.1920.980@0.23.1920.980" timestamp="1602641088312" />
-    <state x="893" y="538" key="git4idea.merge.GitPullDialog" timestamp="1607913616143">
+    <state x="893" y="538" key="git4idea.merge.GitPullDialog" timestamp="1610000071545">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="893" y="538" key="git4idea.merge.GitPullDialog/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1607913616143" />
+    <state x="893" y="538" key="git4idea.merge.GitPullDialog/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1610000071545" />
     <state x="447" y="299" key="git4idea.merge.GitPullDialog/0.23.1280.717@0.23.1280.717" timestamp="1607589170773" />
     <state x="1267" y="361" width="670" height="674" key="search.everywhere.popup" timestamp="1607930802156">
       <screen x="0" y="23" width="2560" height="1340" />
