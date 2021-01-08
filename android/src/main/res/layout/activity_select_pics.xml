@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/red"
+    android:gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
@@ -21,8 +22,8 @@
     </LinearLayout>
 
     <View
-        android:layout_width="match_parent"
-        android:layout_height="1000dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@color/blue"
         />
 </LinearLayout>
