@@ -36,8 +36,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7080ff30-f4dc-4f89-a7df-5629d579afab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/leeson/image_pickers/activitys/SelectPicsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/leeson/image_pickers/activitys/SelectPicsActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,14 +156,7 @@
       <workItem from="1609989435774" duration="95000" />
       <workItem from="1609990048793" duration="26000" />
       <workItem from="1609990657458" duration="10919000" />
-      <workItem from="1610071828767" duration="2758000" />
-    </task>
-    <task id="LOCAL-00018" summary="多图预览">
-      <created>1574840416410</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1574840416410</updated>
+      <workItem from="1610071828767" duration="3206000" />
     </task>
     <task id="LOCAL-00019" summary="多图预览">
       <created>1574908984127</created>
@@ -502,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610072866074</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="android 权限申请出现 文字问题查找">
+      <created>1610075420911</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1610075420912</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,10 +639,10 @@
       <screen x="0" y="23" width="1920" height="980" />
     </state>
     <state x="715" y="373" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1920.980@0.23.1920.980" timestamp="1603443844127" />
-    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1610072865640">
+    <state x="585" y="27" key="CommitChangelistDialog2" timestamp="1610075420500">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1610072865640" />
+    <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1610075420500" />
     <state x="585" y="27" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603768190653" />
     <state x="293" y="23" key="CommitChangelistDialog2/0.23.1280.717@0.23.1280.717" timestamp="1607589163674" />
     <state x="293" y="23" key="CommitChangelistDialog2/0.23.1280.722@0.23.1280.722" timestamp="1607332372092" />
@@ -735,10 +734,10 @@
       <screen x="0" y="23" width="1280" height="717" />
     </state>
     <state x="128" y="23" key="SettingsEditor/0.23.1280.717@0.23.1280.717" timestamp="1607587115495" />
-    <state x="673" y="387" key="Vcs.Push.Dialog.v2" timestamp="1610072872057">
+    <state x="673" y="387" key="Vcs.Push.Dialog.v2" timestamp="1610075534807">
       <screen x="0" y="23" width="2560" height="1340" />
     </state>
-    <state x="673" y="387" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1610072872057" />
+    <state x="673" y="387" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1340@0.23.2560.1340" timestamp="1610075534807" />
     <state x="673" y="388" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1344@0.23.2560.1344" timestamp="1603792048772" />
     <state x="337" y="217" key="Vcs.Push.Dialog.v2/0.23.1280.714@0.23.1280.714" timestamp="1607337586756" />
     <state x="337" y="219" key="Vcs.Push.Dialog.v2/0.23.1280.722@0.23.1280.722" timestamp="1607589478405" />

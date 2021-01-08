@@ -79,10 +79,10 @@ public class SelectPicsActivity extends BaseActivity {
 
     @Override
     public void onCreate(@androidx.annotation.Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_pics);
         mode = getIntent().getStringExtra(GALLERY_MODE);
         uiColor = (Map<String, Number>) getIntent().getSerializableExtra(UI_COLOR);
