@@ -148,6 +148,7 @@ static NSString *const CHANNEL_NAME = @"flutter/image_pickers";
         configuration.allowSelectGif = isShowGif;
         configuration.maxSelectVideoDuration = videoSelectMaxTime;
         configuration.maxRecordDuration = cameraCaptureMaxTime;
+        configuration.languageType = ZLLanguageTypeChineseSimplified;
         if([cameraMimeType isEqualToString:@"photo"]){
             configuration.allowRecordVideo = false;
             configuration.allowTakePhoto= true;
