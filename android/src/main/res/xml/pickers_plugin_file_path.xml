@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--每个节点都支持两个属性：name+path-->
+    <!--path：需要临时授权访问的路径（.代表所有路径）-->
+    <!--name：就是你给这个访问路径起个名字-->
+    <!--<paths>
+        &lt;!&ndash;代表设备的根目录new File("/");&ndash;&gt;
+        <root-path
+            name="root"
+            path="." />
+        &lt;!&ndash;context.getFilesDir()&ndash;&gt;
+        <files-path
+            name="files"
+            path="." />
+        &lt;!&ndash;context.getCacheDir()&ndash;&gt;
+        <cache-path
+            name="cache"
+            path="." />
+        &lt;!&ndash;Environment.getExternalStorageDirectory()&ndash;&gt;
+        <external-path
+            name="externalStorageDirectory"
+            path="." />
+        &lt;!&ndash;context.getExternalFilesDirs()&ndash;&gt;
+        <external-files-path
+            name="externalFilesDirs"
+            path="path" />
+        &lt;!&ndash;getExternalCacheDirs()&ndash;&gt;
+        <external-cache-path
+            name="externalCacheDirs"
+            path="." />
+    </paths>-->
     <paths>
         <external-path path="" name="download" />
         <external-files-path name="apk" path=""/>

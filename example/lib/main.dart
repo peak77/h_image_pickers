@@ -35,9 +35,9 @@ class _MyAppState extends State<MyApp> {
       _listImagePaths = await ImagePickers.pickerPaths(
         galleryMode: _galleryMode,
         showGif: true,
-        selectCount: 9,
+        selectCount: 1,
         showCamera: true,
-        cropConfig: CropConfig(enableCrop: false, height: 1, width: 1),
+        cropConfig: CropConfig(enableCrop: true, height: 1, width: 1),
         compressSize: 50 * 1024,
    /*     uiConfig: UIConfig(
           uiThemeColor: Colors.red,
@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
         paths.add(item.path);
       }
 
-      List<String> compressPath = await ImagePickers.compressImages(paths,500);
+//      List<String> compressPath = await ImagePickers.compressImages(paths,500);
     /*  compressPath.forEach((media) {
         print(media.toString());
       });*/
@@ -130,7 +130,7 @@ class _MyAppState extends State<MyApp> {
                   onPressed: () {
                     ImagePickers.openCamera(
                             cropConfig: CropConfig(
-                                enableCrop: false, width: 2, height: 3))
+                                enableCrop: true, width: 2, height: 3))
                         .then((Media media) {
                       _listImagePaths.clear();
                       _listImagePaths.add(media);
