@@ -152,7 +152,7 @@ public class SelectPicsActivity extends BaseActivity {
                 .setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
                 .setPictureStyle(pictureStyleUtil.getStyle(uiColor))
                 .setPictureCropStyle(pictureStyleUtil.getCropStyle(uiColor))
-
+                .isPageStrategy(true)
 //                .imageFormat(PictureMimeType.PNG.toLowerCase())// 拍照保存图片格式后缀,默认jpeg
                 .isCamera(showCamera)
                 .isGif(showGif)
@@ -160,6 +160,7 @@ public class SelectPicsActivity extends BaseActivity {
                 .withAspectRatio(width.intValue(), height.intValue())
                 .recordVideoSecond(cameraCaptureMaxTime)
                 .imageSpanCount(4)// 每行显示个数 int
+                .synOrAsy(false)
                 .selectionMode(enableCrop || selectCount.intValue() == 1 ? PictureConfig.SINGLE : PictureConfig.MULTIPLE)// 多选 or 单选 PictureConfig.MULTIPLE or PictureConfig.SINGLE
                 .isSingleDirectReturn(false)// 单选模式下是否直接返回
                 .previewImage(true)// 是否可预览图片 true or false
@@ -169,7 +170,8 @@ public class SelectPicsActivity extends BaseActivity {
                 .showCropGrid(true)
                 .hideBottomControls(true)
                 .freeStyleCropEnabled(false)
-                .minimumCompressSize(Integer.MAX_VALUE)
+                .cutOutQuality(90)
+                .minimumCompressSize(100)
                 .compressSavePath(ImageCompressUtils.getPath(getBaseContext()))//压缩图片保存地址
                 .forResult(PictureConfig.CHOOSE_REQUEST);
 
