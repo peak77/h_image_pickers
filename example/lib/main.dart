@@ -98,6 +98,7 @@ class _MyAppState extends State<MyApp> {
                         crossAxisSpacing: 10.0,
                         childAspectRatio: 1.0),
                     itemBuilder: (BuildContext context, int index) {
+                      debugPrint(' _listImagePaths[index].path,--->${ _listImagePaths[index].path}');
                       return GestureDetector(
                         onTap: () {
 //                        ImagePickers.previewImage(_listImagePaths[index].path);

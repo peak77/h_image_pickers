@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.FutureTarget;
 import com.leeson.image_pickers.AppPath;
 import com.leeson.image_pickers.R;
 import com.leeson.image_pickers.utils.CommonUtils;
@@ -35,6 +37,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 
 /**
@@ -178,8 +181,6 @@ public class SelectPicsActivity extends BaseActivity {
     }
 
 
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -209,14 +210,14 @@ public class SelectPicsActivity extends BaseActivity {
                                 }
                             }
                         } else {
-
                             if (Build.VERSION.SDK_INT >= 29) {
                                 //图片选择库 2.5.9 有bug，要这样处理
-                                String AndroidQToPath = AndroidQTransformUtils.copyPathToAndroidQ(SelectPicsActivity.this,
-                                        localMedia.getPath(), localMedia.getWidth(), localMedia.getHeight(), localMedia.getMimeType(), localMedia.getRealPath().substring(localMedia.getRealPath().lastIndexOf("/") + 1));
+                               /* String AndroidQToPath = AndroidQTransformUtils.copyPathToAndroidQ(SelectPicsActivity.this, localMedia.getPath(), localMedia.getWidth(), localMedia.getHeight(), localMedia.getMimeType(), localMedia.getRealPath().substring(localMedia.getRealPath().lastIndexOf("/") + 1));
                                 localMedia.setAndroidQToPath(AndroidQToPath);
-
-                                paths.add(localMedia.getAndroidQToPath());
+                                paths.add(localMedia.getAndroidQToPath());*/
+                                String path = localMedia.getPath();
+                                String realPath = PictureMimeType.isContent(path) && !localMedia.isCut() && !localMedia.isCompressed() ? Uri.parse(path).getPath() : path;
+                                paths.add(realPath);
                             } else {
                                 paths.add(localMedia.getPath());
                             }
@@ -253,20 +254,31 @@ public class SelectPicsActivity extends BaseActivity {
         List<Map<String, Object>> thumbPaths = new ArrayList<>();
         for (int i = 0; i < paths.size(); i++) {
             String path = paths.get(i);
-            Bitmap bitmap = ThumbnailUtils.createVideoThumbnail(path, MediaStore.Video.Thumbnails.FULL_SCREEN_KIND);
+            LocalMedia localMedia = selectList.get(i);
+            Log.e("CMW", "getRealPath------->" + localMedia.getRealPath());
+            Bitmap bitmap = null;
+            bitmap = ThumbnailUtils.createVideoThumbnail(localMedia.getRealPath(), MediaStore.Video.Thumbnails.FULL_SCREEN_KIND);
+           /* try {
+                bitmap = Glide.with(getBaseContext()).asBitmap().load(localMedia.getRealPath()).submit().get();
+                Log.e("CMW","success------------>");
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }*/
             String thumbPath = CommonUtils.saveBitmap(this, new AppPath(this).getAppImgDirPath(false), bitmap);
+            Log.e("CMW","thumbPath----------->"+ thumbPath);
             Map<String, Object> map = new HashMap<>();
             map.put("thumbPath", thumbPath);
-            map.put("path", path);
-            LocalMedia localMedia = selectList.get(i);
+            map.put("path", localMedia.getRealPath());
             Log.e("image_pickers", "videoDuration--->" + localMedia.getDuration() + "   " + "videoWidth--->" + localMedia.getWidth() + "   " + "videoHeight--->" + localMedia.getHeight() + "   " + "videoSize--->" + localMedia.getSize());
             map.put("videoDuration", localMedia.getDuration());
             int orientation = -1;
-            if (PictureMimeType.isContent(path)) {
+        /*    if (PictureMimeType.isContent(path)) {
                 orientation = MediaUtils.getVideoOrientationForUri(getApplicationContext(), Uri.parse(path));
             } else {
                 orientation = MediaUtils.getVideoOrientationForUrl(path);
-            }
+            }*/
             map.put("videoWidth", localMedia.getWidth());
             map.put("videoHeight", localMedia.getHeight());
             map.put("videoSize", localMedia.getSize());
