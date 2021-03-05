@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
         showGif: true,
         selectCount: 1,
         showCamera: true,
-        cropConfig: CropConfig(enableCrop: true, height: 1, width: 1),
+//        cropConfig: CropConfig(enableCrop: true, height: 1, width: 1),
         compressSize: 50 * 1024,
    /*     uiConfig: UIConfig(
           uiThemeColor: Colors.red,
@@ -131,7 +131,7 @@ class _MyAppState extends State<MyApp> {
                   onPressed: () {
                     ImagePickers.openCamera(
                             cropConfig: CropConfig(
-                                enableCrop: true, width: 2, height: 3))
+                                enableCrop: false, width: 2, height: 3))
                         .then((Media media) {
                       _listImagePaths.clear();
                       _listImagePaths.add(media);

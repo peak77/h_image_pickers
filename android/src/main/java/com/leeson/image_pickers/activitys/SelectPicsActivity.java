@@ -189,7 +189,6 @@ public class SelectPicsActivity extends BaseActivity {
                 case PictureConfig.CHOOSE_REQUEST:
                     // 图片、视频、音频选择结果回调
                     List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
-
                     List<String> paths = new ArrayList<>();
                     for (int i = 0; i < selectList.size(); i++) {
                         LocalMedia localMedia = selectList.get(i);
@@ -215,9 +214,13 @@ public class SelectPicsActivity extends BaseActivity {
                                /* String AndroidQToPath = AndroidQTransformUtils.copyPathToAndroidQ(SelectPicsActivity.this, localMedia.getPath(), localMedia.getWidth(), localMedia.getHeight(), localMedia.getMimeType(), localMedia.getRealPath().substring(localMedia.getRealPath().lastIndexOf("/") + 1));
                                 localMedia.setAndroidQToPath(AndroidQToPath);
                                 paths.add(localMedia.getAndroidQToPath());*/
-                                String path = localMedia.getPath();
-                                String realPath = PictureMimeType.isContent(path) && !localMedia.isCut() && !localMedia.isCompressed() ? Uri.parse(path).getPath() : path;
-                                paths.add(realPath);
+                                if(localMedia.getMimeType().startsWith("video")){
+                                    String path = localMedia.getPath();
+                                    String realPath = PictureMimeType.isContent(path) && !localMedia.isCut() && !localMedia.isCompressed() ? Uri.parse(path).getPath() : path;
+                                    paths.add(realPath);
+                                }else{
+                                    paths.add(localMedia.getRealPath());
+                                }
                             } else {
                                 paths.add(localMedia.getPath());
                             }
@@ -255,17 +258,8 @@ public class SelectPicsActivity extends BaseActivity {
         for (int i = 0; i < paths.size(); i++) {
             String path = paths.get(i);
             LocalMedia localMedia = selectList.get(i);
-            Log.e("CMW", "getRealPath------->" + localMedia.getRealPath());
             Bitmap bitmap = null;
             bitmap = ThumbnailUtils.createVideoThumbnail(localMedia.getRealPath(), MediaStore.Video.Thumbnails.FULL_SCREEN_KIND);
-           /* try {
-                bitmap = Glide.with(getBaseContext()).asBitmap().load(localMedia.getRealPath()).submit().get();
-                Log.e("CMW","success------------>");
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
             String thumbPath = CommonUtils.saveBitmap(this, new AppPath(this).getAppImgDirPath(false), bitmap);
             Log.e("CMW","thumbPath----------->"+ thumbPath);
             Map<String, Object> map = new HashMap<>();
